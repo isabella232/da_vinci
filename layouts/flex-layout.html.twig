@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Template for two column layout: header and body.
+ */
+#}
+<div class="custom-flex-layout">
+
+  {% if content.header or content.left_sidebar %}
+  <div class="wrapper-header">
+    {% if content.header %}
+      {{ content.header }}
+    {% endif %}
+    {% if content.left_sidebar %}
+      {{ content.left_sidebar }}
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% if content.full_content %}
+  <div class="wrapper-full-content">
+      {{ content.full_content }}
+  </div>
+  {% endif %}
+
+  {% if content.main %}
+  <div class="wrapper-body">
+    {{ content.main }}
+  </div>
+  {% endif %}
+
+</div>

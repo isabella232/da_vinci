@@ -1,0 +1,22 @@
+uuid: 058ade75-c0a7-4aeb-95ca-4f5621a40ccb
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - da_vinci
+_core:
+  default_config_hash: ws_wACFj-XWP1qMNDk1-zwPh1LrGEY96P90KVM17S0c
+id: da_vinci_help
+theme: da_vinci
+region: content
+weight: -7
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

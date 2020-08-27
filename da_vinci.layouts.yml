@@ -1,0 +1,34 @@
+fullpage:
+  label: Fullpage
+  category: 'Customs layout'
+  path: layouts
+  template: fullpage
+  regions:
+    first:
+      label: First region
+    second:
+      label: Second region
+    third:
+      label: Third region
+    fourth:
+      label: Fourth region
+    fifth:
+      label: Fifth region
+    # Have a look to sixth region in 'fullpage.html.twig' file.
+    #sixth:
+      #label: Sixth region
+
+flex_layout:
+  label: Flex layout
+  category: 'Customs layout'
+  path: layouts
+  template: flex-layout
+  regions:
+    left_sidebar:
+      label: Left sidebar
+    header:
+      label: Header
+    full_content:
+      label: Full content
+    main:
+      label: Main content

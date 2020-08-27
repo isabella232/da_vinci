@@ -1,0 +1,21 @@
+{% if page.main_navigation|render|striptags or page.top_bar|render|striptags %}
+<header class="site-header">
+
+  {% if page.top_bar|render|striptags %}
+  <div class="top-bar">
+    <div class="top-bar__wrapper container">
+      {{ page.top_bar }}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if page.main_navigation|render|striptags %}
+  <div class="main-navigation-area">
+    <div class="main-navigation-area__wrapper container">
+      {{ page.main_navigation }}
+    </div>
+  </div>
+  {% endif %}
+
+</header>
+{% endif %}

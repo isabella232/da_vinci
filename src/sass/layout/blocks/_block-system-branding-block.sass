@@ -1,0 +1,23 @@
+// Branding block.
+$site-name-link-color: $white
+$site-name-link-hover-color: $light-grey
+
+.block-system-branding-block
+  align-items: center
+  display: flex
+  flex-flow: row wrap
+
+  .site-logo
+    line-height: 1
+    margin-right: .5rem
+    z-index: 999
+
+  .site-name
+    +breakpoint(0 point(md) - 1)
+      display: none
+
+    a
+      color: $site-name-link-color
+
+      &:hover
+        color: $site-name-link-hover-color

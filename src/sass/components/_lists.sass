@@ -1,0 +1,22 @@
+// Lists.
+.item-list
+  ul
+    +clean-list
+
+    li
+      margin-left: 0
+
+.tips
+  padding-left: 1.5rem
+
+ul
+  +clean-list
+
+  &.list-style-arrows
+    +list-style(arrows)
+
+  &.list-style-squares
+    +list-style(squares)
+
+  &.links
+    +clean-list

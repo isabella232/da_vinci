@@ -1,0 +1,50 @@
+{#
+/**
+ * @file
+ * Template for a one column panel layout.
+ *
+ * This template provides a very simple "one column" panel display layout.
+ *
+ * Variables:
+ * - $id: An optional CSS id to use for the layout.
+ * - $content: An array of content, each item in the array is keyed to one
+ *   panel of the layout. This layout supports the following sections:
+ *   - content.middle: The only panel in the layout.
+ */
+#}
+
+<div class="custom-fullpage" {% if css_id %}{{ css_id }}{% endif %}>
+  {% if content.first %}
+    <div id="first" class="section region-first">
+      {{ content.first }}
+    </div>
+  {% endif %}
+  {% if content.second %}
+    <div id="second" class="section region-second">
+      {{ content.second }}
+    </div>
+  {% endif %}
+  {% if content.third %}
+    <div id="third" class="section region-third">
+      {{ content.third }}
+    </div>
+  {% endif %}
+  {% if content.fourth %}
+    <div id="fourth" class="section region-fourth">
+      {{ content.fourth }}
+    </div>
+  {% endif %}
+  {% if content.fifth %}
+    <div id="fifth" class="section region-fifth">
+      {{ content.fifth }}
+    </div>
+  {% endif %}
+  {# You can add new regions.
+  Don't forget to include this in 'mytheme.layouts.yml' file..
+  {% if content.sixth %}
+    <div id="sixth" class="section region-sixth">
+      {{ content.sixth }}
+    </div>
+  {% endif %}
+  #}
+</div>

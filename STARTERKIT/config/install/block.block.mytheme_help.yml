@@ -1,0 +1,22 @@
+uuid: 
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - mytheme
+_core:
+  default_config_hash: ws_wACFj-XWP1qMNDk1-zwPh1LrGEY96P90KVM17S0c
+id: mytheme_help
+theme: mytheme
+region: content
+weight: -7
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

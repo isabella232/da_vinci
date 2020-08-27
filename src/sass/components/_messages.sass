@@ -1,0 +1,41 @@
+// Messages.
+$status-color: $green
+$warning-color: $yellow
+$error-color: $red
+
+.messages
+  background-image: none
+  border-radius: 0
+  border-width: 0
+  box-shadow: none
+  color: $white
+  padding: $container-padding
+
+  &--wrapper
+    +container
+
+  + .messages
+    margin: 0
+
+  &--status
+    background-color: $status-color
+
+    .messages--wrapper
+      +icomoon-text($ico-check, 24px, $white, left, start)
+
+  &--warning
+    background-color: $warning-color
+
+    .messages--wrapper
+      +icomoon-text($ico-warning, 24px, $white, left, start)
+
+  &--error
+    background-color: $error-color
+
+    .messages--wrapper
+      +icomoon-text($ico-stop, 24px, $white, left, start)
+
+  a
+    color: $white
+    font-weight: 700
+    text-decoration: underline

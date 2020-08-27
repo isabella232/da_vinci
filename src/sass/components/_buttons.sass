@@ -1,0 +1,14 @@
+// Buttons
+
+.button
+  +button(primary)
+
+  &--secondary
+    +button(secondary)
+
+  &:disabled
+    opacity: .6
+    pointer-events: none
+
+  &:focus
+    outline: none

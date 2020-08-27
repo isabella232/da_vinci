@@ -1,0 +1,39 @@
+global-css:
+  css:
+    theme:
+      css/main.css: {}
+
+global-js:
+  header: true
+  js:
+    js/vendors/jquery.unevent.js: {}
+    js/vendors/jquery.viewport.js: {}
+    js/vendors/css_browser_selector.js: {}
+    js/utils/menu-svg.js: {}
+    js/back-to-top.js: {}
+    js/da-vinci.js: {}
+    js/custom.js: {}
+    js/sliding-panel.js: {}
+    js/svg.js: {}
+  dependencies:
+    - core/jquery
+    - core/modernizr
+    - core/drupal
+
+# User login.
+user-login:
+  css:
+    theme:
+      css/user-login.css: {}
+
+# User register.
+user-register:
+  css:
+    theme:
+      css/user-register.css: {}
+
+# User password.
+user-password:
+  css:
+    theme:
+      css/user-password.css: {}

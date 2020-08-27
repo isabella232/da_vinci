@@ -1,0 +1,22 @@
+uuid: 
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - mytheme
+_core:
+  default_config_hash: dxpL_Jo6QP-jiwgmpUKj5wgaFhYlAtPtY2bu3LrDqdg
+id: mytheme_search
+theme: mytheme
+region: top_bar
+weight: -8
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: '0'
+visibility: {  }

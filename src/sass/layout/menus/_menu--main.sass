@@ -1,0 +1,41 @@
+// Main navigation menu.
+$menu-main-link-color: $cream
+$menu-main-link-active-color: $main-color
+$menu-main-link-font-family-small: $roboto-condensed
+$menu-main-link-font-family-large: $roboto
+
+.menu--main
+  border-bottom: 1px solid $cream
+  border-top: 1px solid $cream
+  padding: 1rem 0
+  +breakpoint($large)
+    border: 0
+    padding: 0
+
+  .menu
+    display: flex
+    flex-direction: column
+    +breakpoint($large)
+      flex-direction: row
+      flex-wrap: wrap
+
+    a
+      align-items: center
+      color: $menu-main-link-color
+      font-family: $menu-main-link-font-family-small
+      font-size: calc-rem(24px)
+      font-weight: 700
+      +breakpoint($large)
+        font-family: $menu-main-link-font-family-large
+        font-size: calc-rem(14px)
+        font-weight: normal
+        padding: .5rem
+        text-transform: uppercase
+
+      &.is-active,
+      &:hover
+        color: $menu-main-link-active-color
+
+        &:after
+          transition: .2s
+          width: 100%

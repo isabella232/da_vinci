@@ -1,0 +1,22 @@
+uuid: 
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - mytheme
+_core:
+  default_config_hash: ssp3U8nm95FKwcIvco88LOTEPH7vIYrEDqHY6c-w3Lk
+id: mytheme_messages
+theme: mytheme
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

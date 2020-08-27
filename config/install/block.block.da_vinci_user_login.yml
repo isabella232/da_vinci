@@ -1,0 +1,20 @@
+uuid: f7a74cc5-009c-4f2d-8b0f-157df38c13f9
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - da_vinci
+id: da_vinci_user_login
+theme: da_vinci
+region: sidebar_first
+weight: 0
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: visible
+visibility: {  }

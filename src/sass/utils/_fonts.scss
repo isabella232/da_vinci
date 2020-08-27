@@ -1,0 +1,15 @@
+// External
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,400i,700');
+
+// Internal
+$icomoon-font-family: 'da-vinci' !default;
+$icomoon-font-path: '../fonts/icomoon' !default;
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  font-style: normal;
+  font-weight: normal;
+  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?5wxcld') format('truetype'),
+  url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?5wxcld') format('woff'),
+  url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?5wxcld##{$icomoon-font-family}') format('svg');
+}

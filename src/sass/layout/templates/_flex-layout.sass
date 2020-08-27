@@ -1,0 +1,28 @@
+// Custom layout - flex layout
+.custom-flex-layout
+  & > *:not(:last-child)
+    margin-bottom: 1rem
+
+  .wrapper-header
+    +breakpoint($large)
+      display: flex
+      flex-flow: row wrap
+      justify-content: space-between
+
+    .block-region-header
+      +breakpoint($large)
+        flex-grow: 1
+
+    .block-region-left-sidebar
+      display: none
+      +breakpoint($large)
+        display: block
+        margin-right: 1%
+        order: -1
+        width: 26.5%
+
+  .wrapper-full-content
+    +full-content
+    overflow: hidden
+
+  //.wrapper-body

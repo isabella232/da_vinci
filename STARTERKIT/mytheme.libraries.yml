@@ -1,0 +1,58 @@
+global-css:
+  css:
+    theme:
+      css/mytheme.css: {}
+      css/colors.css: {}
+
+global-js:
+  header: true
+  js:
+    js/mytheme.js: {}
+
+color.preview:
+  version: VERSION
+  css:
+    theme:
+      color/preview.css: {}
+      css/colors.css: {}
+  js:
+    color/preview.js: {}
+  dependencies:
+    - color/drupal.color
+
+# Front path.
+front:
+  js:    
+    #js/vendors/slick.min.js: {}
+    js/home.js: {}
+  css:
+    theme:
+      css/home.css: {}
+
+# User login.
+user-login:
+  css:
+    theme:
+      css/user-login.css: {}
+
+# User register.
+user-register:
+  css:
+    theme:
+      css/user-register.css: {}
+
+# User password.
+user-password:
+  css:
+    theme:
+      css/user-password.css: {}
+
+# Examples.
+# Dynamic Path (Need attach)
+# Add {{ attach_library('mytheme/name_library') }} in a specific Template.
+floating-menu:
+  js:    
+    js/example.js: {}
+  css:
+    theme:
+      css/example.css: {}
