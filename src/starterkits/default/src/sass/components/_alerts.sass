@@ -1,0 +1,57 @@
+.jconfirm
+  .jconfirm-box-container
+    .jconfirm-box
+      +background-container
+      +breakpoint($large)
+        min-width: calc-rem(500px)
+        width: 100%
+
+      // Content.
+      .jconfirm-content-pane
+        div
+          > *
+            &:not(:last-child)
+              margin-bottom: calc-rem(8px)
+
+        .js-form-type-radio
+          position: relative
+
+          label
+            align-items: center
+            cursor: pointer
+            display: flex
+            flex-flow: row wrap
+            text-transform: capitalize
+
+            &::before
+              background-image: url('../images/radio_unselected.svg')
+              background-position: center
+              background-size: contain
+              content: ''
+              display: block
+              height: calc-rem(20px)
+              margin-right: calc-rem(7px)
+              width: calc-rem(20px)
+
+          input
+            cursor: pointer
+            height: 1.42857rem
+            left: 0
+            opacity: 0
+            position: absolute
+            top: 0
+            width: 1.42857rem
+
+            &:checked + label:before
+              background-image: url('../images/radio_selected.svg')
+
+      // Buttons.
+      .jconfirm-buttons
+        display: flex
+        flex-flow: row wrap
+        justify-content: center
+
+        button
+          +button(primary)
+          +flex-gallery(2)
+

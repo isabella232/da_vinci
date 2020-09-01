@@ -1,0 +1,218 @@
+// Menu administration user.
+$menu-administration-user-background-color-sidebar: #0B0A0A
+$menu-administration-user-border-color: rgba($white, .3)
+
+.menu-administration-user-content
+  background-color: $menu-administration-user-background-color-sidebar
+  background-image: url('../images/background-sidebar.png')
+  background-position: bottom
+  background-repeat: no-repeat
+  background-size: 100%
+  height: 100%
+  max-height: 100vh
+  position: fixed
+  transition: .4s
+  width: calc-rem(266px)
+
+  .region-menu-administration-user
+    display: flex
+    flex-direction: column
+    height: 100%
+    overflow-y: auto
+    width: 100%
+
+    > *
+      padding: 0
+
+      &:not(:last-child):not(:first-child)
+        border-bottom: 1px solid $menu-administration-user-border-color
+
+      &.sidebar-menu-collapse-parent
+        margin-bottom: calc-rem(16px)
+
+    // Logo.
+    .sidebar-logo-app
+      padding: calc-rem(34px) 0
+
+      a
+        display: block
+        width: 100%
+
+        img
+          margin: 0 auto
+
+    // Block user profile
+    #block-views-block-user-profile-dashboard-block-1
+      padding: calc-rem(34px) 0 calc-rem(45px)
+
+      .views-field-roles-target-id
+        padding-left: calc-rem(16px)
+        padding-right: calc-rem(16px)
+
+    // Menu account.
+    .custom-user-account-menu
+      margin-top: auto
+      width: 100%
+
+  // If menu administation user has class collapse.
+  &.collapse
+    background-size: cover
+    transition: .4s
+    width: calc-rem(81px)
+
+    // Block logo mytheme.
+    .sidebar-logo-app
+      padding-bottom: calc-rem(36.5px)
+
+      a
+        &::before
+          background-image: url('../images/logo_redux.png')
+          background-position: center
+          background-repeat: no-repeat
+          content: ''
+          display: block
+          height: 48px
+          margin: 0 auto
+          width: 40px
+
+        img
+          display: none
+
+    // Profile user.
+    .block-views-blockuser-profile-dashboard-block-1
+      padding: calc-rem(36.5px) 0 calc-rem(100px)!important
+
+      .views-field-name,
+      .views-field-roles-target-id
+        display: none
+
+      .views-field-user-picture
+        .field-content
+          position: relative
+
+          &::after
+            background-color: $primary-color-light
+            border: 4px solid #0B0808
+            border-radius: 50%
+            bottom: 0
+            box-shadow: 0 2px 16px 0 rgba($black, .5)
+            content: ''
+            display: block
+            height: 24px
+            position: absolute
+            right: 0
+            transform: translate(1px, 9px)
+            width: 24px
+
+
+    // Main menu and secondary menu.
+    .user-main-menu,
+    .menu--secondary-menu
+      a
+        margin: 0 auto
+
+        &.home-user
+          +icomoon($ico-home, 24px, $white)
+
+        &.orders
+          +icomoon($ico-clipboard, 24px, $white)
+
+        &.parts
+          +icomoon($ico-check-square, 24px, $white)
+
+        &.user
+          +icomoon($ico-user-management, 24px, $white)
+
+        &.tools-machine
+          +icomoon($ico-truck-management, 24px, $white)
+
+        &.smallholding
+          +icomoon($ico-tree, 24px, $white)
+
+        &.appraisal
+          +icomoon($ico-appraisal, 24px, $white)
+
+        &.offer
+          +icomoon($ico-offer, 24px, $white)
+
+        &.lots
+          +icomoon($ico-lot-mng, 24px, $white)
+
+        &.receipts
+          +icomoon($ico-receipt-mngc, 24px, $white)
+
+        &.certification
+          +icomoon($ico-certificate, 24px, $white)
+
+        &.authorization
+          +icomoon($ico-authorization, 24px, $white)
+
+        &.delivery-notes
+          +icomoon($ico-appraisal, 24px, $white)
+
+        &.home-user,
+        &.orders,
+        &.parts,
+        &.user,
+        &.tools-machine,
+        &.smallholding,
+        &.appraisal,
+        &.offer,
+        &.lots,
+        &.receipts,
+        &.certification,
+        &.authorization,
+        &.delivery-notes
+          padding-bottom: 2rem
+          padding-top: 2rem
+
+          &.is-active,
+          &:hover
+            background-color: rgba($primary-color-light, .15)
+            width: 100%
+
+            &::before
+              color: $primary-color-light
+
+          &::before
+            font-weight: normal
+
+    // Menu collapse.
+    .sidebar-menu-collapse-parent
+      a
+        margin: 0 auto
+
+        &[title='Colapsar menú']
+          +icomoon($ico-collapse, 16px, $white)
+          padding-bottom: 2rem
+          padding-top: 2rem
+          width: 100%
+
+          &.is-active,
+          &:hover
+            background-color: rgba($primary-color-light, .15)
+
+            &::before
+              color: $primary-color-light
+
+    // User account menu.
+    .custom-user-account-menu
+      a
+        +icomoon($ico-exit, 22px, $white)
+        margin: 0 auto
+
+    // Version.
+    .website-current-version
+      p
+        text-align: center
+
+        &:first-child
+          display: none
+
+        &:nth-child(2)
+          display: block
+          padding: 0
+
+  &.collapse ~ .wrapper-content
+    padding-left: 0
+    transition: .4s

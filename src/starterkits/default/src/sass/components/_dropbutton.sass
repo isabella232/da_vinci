@@ -1,0 +1,21 @@
+.dropbutton-wrapper
+  width: 100%
+
+  .dropbutton-widget
+    align-items: center
+    background-color: transparent
+    border: 0
+    display: flex
+    flex-flow: row nowrap
+    justify-content: flex-start
+    position: relative !important
+
+    a
+      margin-bottom: .5rem
+      margin-right: .5rem
+
+      &:first-child
+        +icomoon($ico-edit, 18px, $black)
+
+      &:nth-child(2)
+        +icomoon($ico-trash, 18px, $black)

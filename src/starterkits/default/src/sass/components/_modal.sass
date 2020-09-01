@@ -1,0 +1,60 @@
+// Variables.
+$background-color-default: $white
+$color-default: rgba($black, .8)
+$font-family-default: $ralewway
+
+.ui-dialog
+  +background-container
+  transform: translateY(-50%)
+  width: 100%
+  +breakpoint($medium)
+    min-width: calc-rem(500px)
+
+  // Header.
+  .ui-widget-header
+    background: $background-color-default
+
+    .ui-dialog-title
+      color: $color-default
+      font-family:  $ralewway
+      font-size: calc-rem(20px)
+      font-weight: 600
+      letter-spacing: .5px
+
+  // Content.
+  .ui-dialog-content
+
+    form
+      background-color: transparent
+      border-radius: 0
+      box-shadow: none
+
+  // Buttons.
+  .ui-dialog-buttonpane
+    background: $background-color-default
+
+  // Form.
+  form
+    padding: 0
+
+    input,
+    label
+      font-family: $font-family-default
+
+    .js-form
+      &-type-textfield
+        label
+          left: 2% !important
+
+#drupal-modal
+  .node--type-contract-owner-association
+    &.node--view-mode-full
+      box-shadow: none
+      padding:
+        left: 0
+        right: 0
+
+// Background modal
+.ui-widget-overlay
+  background-color: $black
+  opacity: 0.67

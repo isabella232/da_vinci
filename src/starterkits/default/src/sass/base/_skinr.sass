@@ -1,9 +1,9 @@
 // HTML
 
 /// @ignore Font size.
-//$default-font-size: $rem-base
+$default-font-size: $rem-base
 
-//html
+html
   font-size: $default-font-size
 
 // --------------------------------------------------
@@ -11,99 +11,64 @@
 // BODY
 
 /// @ignore Body background color.
-//$body-background-color: $cream
+$body-background-color: $light-grey
 
 /// @ignore Default color.
-//$default-color: $grey
+$default-color: $black
 
 /// @ignore Default font family.
-//$default-font-family: $roboto
+$default-font-family: $ralewway
 
-//body
+body
   background-color: $body-background-color
   color: $default-color
   font-family: $default-font-family
   font-weight: 400
-  line-height: 1.4
+  line-height: 1.7
 
 // --------------------------------------------------
 
 // HEADINGS
 
 /// @ignore Titles font family.
-//$title-font-family: $roboto-condensed
+$title-font-family: $ralewway
 
 /// @ignore Titles color.
-//$title-color: $secondary-shade-color
+$title-color: rgba($black, .8)
 
-//h1,
-//h2,
-//h3,
-//h4,
-//h5,
-//h6
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
   color: $title-color
   font-family: $title-font-family
-  font-weight: 700
+  font-weight: 600
   margin: 0
 
-//h2,
-//h3,
-//h4,
-//h5,
-//h6
-  margin: 2rem 0 .75rem
-
-//h2,
-//h3
-  line-height: 1.25
-
-//h4,
-//h5,
-//h6
-  line-height: 1.4
-
-//h1
-  font-size: calc-rem(40px)
-  line-height: 1.13
-  margin: 2rem 0 1.5rem
-  +breakpoint($large)
-    font-size: calc-rem(44px)
-    margin: 1.5rem 0
-
-  &.page-title
-    margin-top: 0
-
-//h2
-  font-size: calc-rem(36px)
-  +breakpoint($large)
-    font-size: calc-rem(40px)
-
-//h3
+h1
   font-size: calc-rem(32px)
-  +breakpoint($large)
-    font-size: calc-rem(36px)
+  letter-spacing: .5px
+  line-height: 2.28
+  margin: 1.5rem 0
 
-//h4
-  font-size: calc-rem(28px)
-  +breakpoint($large)
-    font-size: calc-rem(32px)
-
-//h5
-  font-size: calc-rem(24px)
-  +breakpoint($large)
-    font-size: calc-rem(28px)
-
-//h6
+h2
   font-size: calc-rem(20px)
-  +breakpoint($large)
-    font-size: calc-rem(24px)
+
+h3
+  font-size: calc-rem(16px)
+
+h4
+  font-size: calc-rem(14px)
+  line-height: 1.14
 
 // --------------------------------------------------
 
 // PARAGRAPHS
 
-//p
+p
+  font-weight: 500
   margin: 0 0 1.2rem
 
 // ------------------------------------------------
@@ -111,14 +76,16 @@
 // LINKS
 
 /// @ignore Link color.
-//$link-color: $main-color
+$link-color: $primary-color-dark
 
 /// @ignore Link hover color.
-//$link-hover-color: tint($link-color, 15%)
+$link-hover-color: $primary-color-light
 
-//a
+a
   color: $link-color
   display: inline-block
+  font-weight: 700
+  line-height: 1.14
   text-decoration: none
   transition: color .2s
 
@@ -128,67 +95,12 @@
 
 // ------------------------------------------------
 
-// BLOCKQUOTES
-
-/// @ignore Blockquotes color.
-//$blockquote-color: $default-color
-
-/// @ignore Blockquotes font family.
-//$blockquote-font-family: $default-font-family
-
-//blockquote
-  +icomoon-text($ico-quote-start, 32px, $secondary-color, top, start)
-  +icomoon-text($ico-quote-end, 32px, $secondary-color, bottom, end, 32px, transparent, 0, after)
-  border: 0
-  margin: 2rem 0
-  padding-left: 2rem
-  padding-right: 2rem
-  +breakpoint($medium)
-    margin: 2rem 0
-
-  *
-    color: $blockquote-color
-    font-family: $blockquote-font-family
-    font-size: calc-rem(18px)
-    font-style: italic
-    line-height: 1.6
-    +breakpoint($large)
-      font-size: calc-rem(22px)
-
-  > p
-    &:first-child
-      display: block
-      margin-top: 0
-
-    &:last-child
-      margin-bottom: 0
-
-// ------------------------------------------------
-
-// Mark
-
-/// @ignore  Mark Background color.
-//$mark-background-color: $grey
-
-/// @ignore  Mark Color.
-//$mark-color: $white
-
-//mark,
-//.marker
-  background-color: $mark-background-color
-  color: $mark-color
-  float: right
-  font-size: calc-rem(14px)
-  padding: .5rem
-
-// ------------------------------------------------
-
 // VARIOUS
 
-//summary
+summary
   outline: none
 
-//strong
+strong
   font-weight: 700
 
 //code,

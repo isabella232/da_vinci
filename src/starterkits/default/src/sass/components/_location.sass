@@ -1,0 +1,38 @@
+/** pop-up **/
+.ui-dialog-content.ui-widget-content
+  #floating-panel
+    display: flex
+    justify-content: space-around
+    margin: 1rem auto
+
+    #address
+      background-color: $input-background-color
+      border: 1px solid $input-border-color
+      border-radius: 4px
+      color: $input-color
+      font-size: calc-rem($input-font-size)
+      font-weight: 500
+      max-width: 100%
+      outline: none
+      padding: calc-rem(15px)
+      width: 100%
+      margin-right: 1rem
+
+      &:hover,
+      &:focus
+        border-color: $input-hover-border-color
+
+      &:focus
+        background-color: $white
+
+      &[disabled='disabled']
+        cursor: not-allowed
+
+/** field-item **/
+.field--name-field-start-location,
+.field--name-field-end-location,
+.field--name-field-geolocation,
+.field--name-field-portion-location
+  .geolocation
+    margin-bottom: 1rem
+

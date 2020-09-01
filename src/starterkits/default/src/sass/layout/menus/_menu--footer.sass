@@ -1,0 +1,28 @@
+$menu-footer-link-color: $white
+
+
+// Footer instance
+nav[id*='block-mytheme-footer']
+  order: 0
+
+  +breakpoint($medium)
+    order: 1
+    padding: 0 4rem
+
+  .menu
+    display: flex
+    flex-flow: row wrap
+
+    a
+      align-items: right
+      color: $menu-footer-link-color
+      display: flex
+      flex-direction: column
+      font-size: calc-rem(14px)
+      padding: .5rem
+      text-transform: uppercase
+      font-weight: 600
+      letter-spacing: 0.9px
+
+      &::after
+        content: none

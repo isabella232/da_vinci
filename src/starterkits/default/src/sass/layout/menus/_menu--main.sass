@@ -1,0 +1,44 @@
+// Main navigation menu.
+$menu-main-link-color: $white
+$menu-main-link-active-color: $white
+
+.menu--main
+  border-top: 0
+
+.menu--main,
+.menu--secondary-menu
+  padding: calc-rem(34px) 0
+
+  .menu
+    display: flex
+    flex-flow: row wrap
+
+    .menu-item
+      width: 100%
+
+      a
+        align-items: center
+        color: $menu-main-link-color
+        display: block
+        font-size: calc-rem(14px)
+        font-weight: 600
+        letter-spacing: .5px
+        line-height: 1.14
+        text-transform: none
+
+        &.is-active,
+        &:hover
+          background-color: rgba($primary-color-light, .15)
+          color: $menu-main-link-active-color
+
+          &::before
+            color: $primary-color-light
+
+          &:after
+            transition: .2s
+            width: 100%
+
+      &.menu-item--active-trail
+        a
+          background-color: rgba($primary-color-light, .15)
+          color: $menu-main-link-active-color

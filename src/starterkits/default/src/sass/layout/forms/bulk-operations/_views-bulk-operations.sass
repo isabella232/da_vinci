@@ -1,0 +1,21 @@
+.views-bulk-operations-confirm-action
+  +background-container
+  display: flex
+  flex-flow: row wrap
+  justify-content: flex-end
+
+  .item-list
+    width: 100%
+
+    h3,
+    ul
+      margin-bottom: calc-rem(16px)
+
+  .form-submit
+    &:not(:last-child)
+      margin-right: calc-rem(16px)
+
+#vbo-action-form-wrapper
+  .vbo-multipage-selector,
+  .form-item-select-all
+    display: none

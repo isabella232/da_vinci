@@ -1,0 +1,177 @@
+.user-login-form
+  background-color: transparent!important
+  border-radius: 0
+  margin: 0 auto
+  margin-bottom: calc-rem(50px)
+  max-width: 28.188rem
+
+  .js-form-item
+    position: relative
+
+    // Bar.
+    .bar
+      display: block
+      height: 2px
+      position: relative
+      transform: translate(-13px, 34px)
+      width: 100%
+
+      &::before,
+      &::after
+        background: $primary-color-dark
+        bottom: 2px
+        content: ''
+        position: absolute
+        transition: .3s ease
+        width: 0
+
+      &::before
+        left: 49%
+
+      &::after
+        right: 49%
+
+    // Inputs.
+    input
+      &[type='password'],
+      &[type='search'],
+      &[type='email'],
+      &[type='text'],
+      &[type='tel']
+        background-color: transparent
+        border: 2px solid transparent
+        border-bottom: 2px solid $white
+        color: $white
+        font-family: $ralewway
+        font-size: calc-rem(14px)
+        outline: none
+        transition: .2s ease
+        width: 100%
+
+        &:focus,
+        &:active,
+        &:hover
+          border-color: transparent
+          box-shadow:  0 0 0 0 transparent inset
+          outline: 0 none
+          transition: .2s ease
+
+        &:active,
+        &:hover
+          border-bottom: 2px solid $white
+
+        &:focus ~ .bar
+          &::before,
+          &::after
+            background: $primary-color-dark
+            height: 2px
+            transition: .3s ease
+            width: 55%
+
+    // Override styles for webkit.
+    input:-webkit-autofill
+      -webkit-box-shadow: 0 0 0 0 transparent inset
+      -webkit-text-fill-color: $white
+      font-family: $ralewway
+      font-size: calc-rem(14px)
+      transition: background-color 5000s ease-in-out 0s
+
+      &:hover,
+      &:focus
+        -webkit-box-shadow: 0 0 0 0 transparent inset
+        -webkit-text-fill-color: $white
+        font-size: calc-rem(14px)
+        outline: none
+        transition: background-color 5000s ease-in-out 0s
+
+    // Labels.
+    label
+      left: 5px
+      padding-left: 2rem
+      pointer-events: none
+      position: absolute
+      top: 10px
+      transition: .2s
+
+      &.label-float
+        font-size: calc-rem(12px)
+        padding-left: 0
+        top: -20px
+
+      &::after
+        content: none
+
+  // Input name.
+  .form-item-name
+    .wrapper-input
+      position: relative
+      +icomoon-text($ico-user, 20px, $white)
+
+      &::before
+        left: 2%
+        top: 0
+        transform: translateY(40%)
+
+      input
+        left: 0
+        padding-left: 2.5rem
+        position: absolute
+        top: 0
+
+    .description
+      padding-top: 3rem
+
+  // Input password.
+  .js-form-type-password
+    margin-top: calc-rem(74px)
+
+    //label
+      display: flex
+      flex-direction: row
+
+    .wrapper-input
+      position: relative
+      +icomoon-text($ico-lock, 20px, $white)
+
+      &::before
+        left: 2%
+        transform: translateY(35%)
+
+      input
+        left: 0
+        padding-left: 2.5rem
+        position: absolute
+        top: 0
+
+      .icon-hidden
+        +icomoon-text($ico-hidden, 20px, $white, right, center, 20px, transparent, 0, before)
+        cursor: pointer
+        display: block
+        position: absolute
+        right: 0
+        width: 20px
+
+        &::before
+          right: -1%
+          transform: translate(-50%, 35%)
+
+        &.show
+          +icomoon-text($ico-visible, 20px, $white, right, center, 20px, transparent, 0, before)
+          position: absolute
+          right: 0
+          width: 20px
+
+          &::before
+            right: -1%
+            transform: translate(-50%, 35%)
+
+    .description
+      padding-top: 3rem
+
+  // Button action.
+  #edit-actions
+    margin-top: calc-rem(71px)
+
+    input
+      margin-left: 0
+      width: 100%

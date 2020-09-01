@@ -3,12 +3,10 @@
 // Examples imports.
 
 // Resources (Dev libraries & utils).
-//@import '../../../node_modules/slick-carousel/slick/slick.scss'
-//@import '../resources'
-//@import '../components/vendors/slick'
+@import '../resources'
 
 // Blocks.
-//@import 'home/blocks/*'
+@import 'home/blocks/*'
 
 // Nodes.
 //@import '../layout/nodes/content-type-name-example/view-mode-name/*'
@@ -19,4 +17,41 @@
 // Views.
 //@import '../layout/views/view-name-example/view-mode-name/*'
 
-//.path-frontpage
+.path-frontpage
+
+  .wrapper-content
+    padding-left: 0
+
+    main
+      overflow: hidden
+      position: relative
+
+      &::before
+        background-image: url('../images/ruido_blanco.png')
+        content: ''
+        display: block
+        height: 100vh
+        left: 0
+        opacity: .3
+        position: absolute
+        top: 0
+        width: 100vw
+        z-index: -999
+
+      // Block logo.
+      .chainwood-logo-login-page
+        img
+          margin: 0 auto
+
+      // Tabs login.
+      .block-local-tasks-block
+        display: none
+
+      // Page title.
+      .block-page-title-block
+        display: none
+
+      #edit-actions
+        input
+          padding-bottom: calc-rem(17px)
+          padding-top: calc-rem(17px)

@@ -1,0 +1,36 @@
+.contact-message-personal-form
+  +background-container
+
+  .form-item
+    &-name,
+    &-mail
+      padding: calc-rem(32px) 0
+      border-bottom: 1px solid rgba($secondary-color-light, .5)
+
+      .field__label
+        align-items: center
+        color: rgba($secondary-color, .8)
+        display: flex
+        flex-flow: row wrap
+        font-size: calc-rem(16px)
+        font-weight: 500
+        line-height: 1.3
+        margin-bottom: calc-rem(21px)
+
+    &-recipient
+      align-items: center
+      display: flex
+      flex-flow: row wrap
+
+      label
+        line-height: 1.3
+        margin-bottom: 0
+        margin-right: calc-rem(8px)
+
+      a
+        line-height: 1.3
+
+      .field--name-subject,
+      .field--name-message
+        width: 100%
+

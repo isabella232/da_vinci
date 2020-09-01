@@ -1,0 +1,50 @@
+// Messages.
+$success-background-color: $status-success-bg
+$success-color: $status-success
+
+$warning-background-color: $status-warning-bg
+$error-backgound-color: $status-error-bg
+
+.messages
+  background-image: none
+  border-radius: 0
+  border-width: 0
+  box-shadow: none
+  color: $white
+  margin-bottom: calc-rem(16px)
+  padding: calc-rem(16px)
+
+  &--wrapper
+    +container
+
+  + .messages
+    margin: 0
+
+  &--status
+    background-color: $success-background-color
+
+    .messages--wrapper
+      +icomoon-text($ico-check, 24px, $success-color, left, start)
+      color: $success-color
+
+      a
+        color: $success-color
+
+  &--warning
+    background-color: $warning-background-color
+
+    .messages--wrapper
+      +icomoon-text($ico-warning, 24px, $status-warning, left, start)
+
+      h2,
+      a
+        color: $status-warning
+
+  &--error
+    background-color: $error-backgound-color
+
+    .messages--wrapper
+      +icomoon-text($ico-stop, 24px, $status-error, left, start)
+
+      div[role='alert']
+        color: $status-error

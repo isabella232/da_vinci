@@ -1,0 +1,18 @@
+.block-content-type-video
+  .field--name-field-url-video-embed
+    .video-embed-field-responsive-video
+      left: 0
+      position: absolute
+      top: 0
+      transform: scale(3.5)
+      width: 100%
+      z-index: -1001
+      +breakpoint($large)
+        transform: scale(2.5)
+      +breakpoint($x-large)
+        transform: scale(1.5)
+      +breakpoint($xx-large)
+        transform: scale(1)
+
+      &::after
+        content: none

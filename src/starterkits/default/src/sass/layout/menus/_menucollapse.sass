@@ -1,0 +1,35 @@
+// Menu collapse.
+.sidebar-menu-collapse-parent
+  border-bottom: 0!important
+  padding: calc-rem(34px) 0
+
+  p
+    margin-bottom: 0
+
+    a
+      align-items: center
+      color: $white
+      font-size: calc-rem(14px)
+      font-weight: 600
+      letter-spacing: .5px
+      line-height: 1.14
+      padding-left: 3rem
+      text-transform: none
+      width: 100%
+
+      &.is-active,
+      &:hover
+        background-color: rgba($primary-color-light, .15)
+        color: $white
+
+      &[title='Colapsar menú']
+        +icomoon-text($ico-expand, 16px, $white, left, center, 24px, transparent, 0, before)
+        padding: 1.5rem 1rem 1.5rem 4rem
+
+        &::before
+          font-weight: normal
+          left: 8%
+
+        &:hover
+          &::before
+            color: $primary-color-light

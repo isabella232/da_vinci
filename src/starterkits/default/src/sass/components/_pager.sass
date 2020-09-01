@@ -1,1 +1,71 @@
 
+// Pager.
+$pager-item-border-color: transparent
+$pager-link-hover-background-color: blue
+$pager-link-color: $secondary-color-light
+$pager-link-hover-color: $secondary-color
+
+.pager
+  margin-top: calc-rem(24px)
+  margin-bottom: 0
+
+  &__items
+    align-items: center
+    display: flex
+    flex-flow: row wrap
+    justify-content: flex-end
+    padding: 0
+    padding-right: calc-rem(32px)
+
+  &__item
+    border: 0
+    font-size: calc-rem(16px)
+    line-height: 1
+    margin: .15rem
+    padding: 0
+
+    *
+      font-size: inherit
+      line-height: inherit
+
+    &--ellipsis
+      line-height: 1
+      padding: .75rem 1rem
+
+    &.is-active,
+    &:hover
+      a
+        background-color: transparent
+        color: $pager-link-hover-color
+
+        &:hover
+        &::before
+          color: $pager-link-hover-color
+
+    a
+      background-color: transparent
+      color: $pager-link-color
+      cursor: pointer
+      display: block
+      padding: .75rem 1rem
+
+    &--first
+
+      a
+        +icomoon($ico-first, 14px, $secondary-color-light)
+
+    &--previous
+      a
+        +icomoon($ico-chevron-left, 12px, $secondary-color-light)
+
+    &--next
+      a
+        +icomoon($ico-chevron-right, 12px, $secondary-color-light)
+
+    &--last
+      a
+        +icomoon($ico-last, 14px, $secondary-color-light)
+
+
+
+

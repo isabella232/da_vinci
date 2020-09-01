@@ -1,0 +1,25 @@
+// Accout menu.
+.custom-user-account-menu
+  border-bottom: 0!important
+  margin-bottom: calc-rem(17px)
+
+  a
+    +icomoon-text($ico-exit, 22px, $white, left, center, 24px, transparent, 0, before)
+    color: $white
+    font-size: calc-rem(14px)
+    font-weight: 600
+    letter-spacing: .5px
+    line-height: 1.14
+    padding: 0 1rem 0 4rem
+    text-transform: lowercase
+
+    &::before
+      font-weight: normal
+      left: 13%
+
+    &.is-active,
+    &:hover
+      color: $white
+
+    &::first-letter
+      text-transform: uppercase

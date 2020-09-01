@@ -1,2 +1,146 @@
+// Variables.
+$view-empty-color: rgba($black, .8)
+$view-filters-background-color: transparent
+
+$select-background-color: $white
+$select-color: $black
+$select-border-color: rgba($secondary-color, .4)
+$select-hover-border-color: $primary-color
+$select-font-size: 14px
+
+$label-color-focus: $primary-color-dark
+$label-color: rgba($secondary-color, .8)
+$label-font-size: 16px
+$label-float-font-size: 12px
+
+// Views.
 
 
+.view
+
+  // Empty.
+  .view-empty
+    align-items: center
+    background-color: $white
+    border-radius: 8px
+    box-shadow: 0 0 16px 0 rgba($black, .16)
+    color: $view-empty-color
+    display: flex
+    flex-direction: column-reverse
+    font-size: calc-rem(16px)
+    font-weight: 600
+    height: calc-rem(328px)
+    justify-content: center
+    line-height: 1.71
+    width: 100%
+
+    img
+      margin-bottom: calc-rem(41px)
+
+  // View exposed.
+  .view-filters
+    //max-width: calc-rem(294px)
+    //width: 100%
+
+    .views-exposed-form
+      background-color: $view-filters-background-color
+      box-shadow: none
+      margin-bottom: calc-rem(16px)
+      padding: 0
+
+      .form--inline
+        position: relative
+        align-items: center
+
+        .form-item
+          position: relative
+          margin-bottom: 0
+          margin-top: 0
+
+        label
+          background-color: $light-grey
+          color: $label-color
+          font-size: calc-rem($label-font-size)
+          font-weight: 500
+          left: 2%
+          line-height: 1
+          padding-left: .3rem
+          padding-right: .3rem
+          position: absolute
+          text-transform: lowercase
+          top: 50%
+          transform: translateY(-50%)
+          transition: .3s
+
+          &:first-letter
+            text-transform: uppercase
+
+        select
+          background-color: $light-grey
+          border-radius: 4px
+          color: $select-color
+          font-size: calc-rem($select-font-size)
+          font-weight: 500
+
+          &:hover,
+          &:focus
+            border-color: $select-hover-border-color
+
+          &:focus
+            background-color: transparent
+
+          option
+            background-color: $select-background-color
+
+        .float-label
+          label
+            color: $primary-color-dark
+            font-size: calc-rem($label-float-font-size)
+            top: -17%
+            transform: none
+
+        input
+          background-color: $light-grey
+          border-radius: 4px
+          outline: none
+          padding-bottom: calc-rem(11px)
+          padding-top: calc-rem(11px)
+
+          &:hover,
+          &:focus
+            border-color: $input-hover-border-color
+
+        input:-webkit-autofill
+          &:focus
+            -webkit-box-shadow: 0 0 0 0 $light-grey inset
+            transition: background-color 5000s ease-in-out 0s
+
+        #edit-actions
+          height: 24px
+          margin: 0
+          //position: absolute
+          right: 0
+          top: 0
+          //transform: translate(-50%, 0)
+          //width: 24px
+          width: auto
+
+          input
+            background-color: transparent
+            background-image: url(../images/search_ic.svg)
+            background-position: center
+            background-repeat: no-repeat
+            background-size: contain
+            border: 0
+            display: block
+            font-size: 0
+            //height: 42px
+            height: 24px
+            margin: 0
+            padding: 0
+            //width: 42px
+            width: 24px
+
+      &:hover
+          #edit-title
+            border: 1px solid $primary-color

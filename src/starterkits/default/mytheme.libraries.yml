@@ -2,12 +2,17 @@ global-css:
   css:
     theme:
       css/mytheme.css: {}
-      css/colors.css: {}
 
 global-js:
   header: true
   js:
     js/mytheme.js: {}
+    js/inputs.js: {}
+    js/collapse-menu.js: {}
+    js/autocomplete-inputs-entity-reference.js: {}
+
+  dependencies:
+    - core/jquery.once
 
 color.preview:
   version: VERSION
@@ -22,7 +27,7 @@ color.preview:
 
 # Front path.
 front:
-  js:    
+  js:
     #js/vendors/slick.min.js: {}
     js/home.js: {}
   css:
@@ -47,11 +52,15 @@ user-password:
     theme:
       css/user-password.css: {}
 
+# Control panel.
+  js:
+    js/collapse-menu.js: {}
+
 # Examples.
 # Dynamic Path (Need attach)
 # Add {{ attach_library('mytheme/name_library') }} in a specific Template.
 floating-menu:
-  js:    
+  js:
     js/example.js: {}
   css:
     theme:

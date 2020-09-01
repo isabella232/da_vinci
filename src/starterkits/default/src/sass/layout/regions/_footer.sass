@@ -1,0 +1,22 @@
+.site-footer
+  .footer-wrapper
+    background-color: $footer
+    min-height: calc-rem(104px)
+    padding: $container-padding
+
+    .region
+      +breakpoint($below-s-small)
+        justify-content: center
+
+      +breakpoint($medium)
+        align-items: center
+        display: flex
+        flex-flow: row nowrap
+        justify-content: space-between
+
+      .block-content-type-image_text
+        .field--name-field-label
+          font-size: calc-rem(12px)
+          font-weight: 500
+          line-height: 1
+          margin-bottom: calc-rem(5px)

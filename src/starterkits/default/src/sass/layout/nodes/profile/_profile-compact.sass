@@ -1,0 +1,19 @@
+.profile
+  &.compact
+    align-items: center
+    display: flex
+    flex-flow: row wrap
+
+    &:hover
+      > .field
+        a
+          color: $link-hover-color
+
+    .field
+      padding: 0
+
+    .field__item
+      padding: 0 !important
+
+      &:not(:first-child)
+        margin-left: .5rem

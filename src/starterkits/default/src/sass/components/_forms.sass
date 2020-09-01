@@ -1,0 +1,592 @@
+// ----------------------------------
+
+// FORMS
+$checkbox-background-color: $white
+$checkbox-color-border: rgba($black, .5)
+$checkbox-color-selected: $primary-color-dark
+
+$fieldset-border-color: $secondary-color
+$fieldset-legend-color: rgba($black, .8)
+$fieldset-legend-size: calc-rem(16px)
+
+$input-background-color: $white
+$input-border-color: rgba($secondary-color, .4)
+$input-color: $black
+$input-font-size: 16px
+$input-hover-border-color: $primary-color
+
+$label-color-focus: $primary-color-dark
+$label-color: rgba($secondary-color, .8)
+$label-font-size: 16px
+
+$placeholder-font-size: 16px
+
+$select-option-font-size: 14px
+
+$textarea-background-color: $white
+$textarea-border-color: rgba($secondary-color, .4)
+$textarea-font-size: 14px
+$textarea-hover-border-color: $primary-color
+
+$description-color: rgba($secondary-color, .8)
+
+form
+
+  // Styles general except login form.
+  &:not(.user-login-form):not(.views-exposed-form)
+
+    .form-item
+      &:not(.js-form-type-textarea)
+        margin: calc-rem(16px) 0
+
+    // Label.
+    label
+      color: $label-color
+      font-size: calc-rem($label-font-size)
+      font-weight: 500
+      line-height: 1.3
+      text-transform: lowercase
+
+      &::first-letter
+        text-transform: uppercase
+
+      .line-input
+        display: none
+
+    .fieldset-wrapper
+      .js-form-wrapper
+        margin-top: calc-rem(16px)
+
+    // Fielset.
+    .fieldset-legend
+      color: $label-color
+      font-size: calc-rem(12px)
+      font-weight: 600
+      line-height: 1
+      margin-bottom: 0
+      padding-left: .3rem
+      padding-right: .3rem
+      text-transform: capitalize
+
+    fieldset
+      height: auto
+      max-width: 100%
+      width: 100%
+
+      &.form-composite
+        margin-right: calc-rem(48px)
+        max-width: calc-rem(416px)
+
+      &.fieldgroup
+        legend
+          margin-bottom: calc-rem(18px)
+          width: 100%
+
+          span
+            color: $fieldset-legend-color
+            font-size: $fieldset-legend-size
+            font-weight: 600
+            line-height: 24px
+            margin-bottom: 0
+            text-transform: lowercase
+
+            &::first-letter
+              text-transform: uppercase
+
+        .fieldset-wrapper
+          +background-container
+
+          .js-form-type-radio
+            &:not(:last-child)
+              margin-bottom: calc-rem(29px)
+
+            label
+              align-items: center
+              cursor: pointer
+              display: flex
+              flex-flow: row wrap
+              //text-transform: capitalize
+              text-transform: unset
+
+              &::before
+                background-image: url('../images/radio_unselected.svg')
+                background-position: center
+                background-size: contain
+                content: ''
+                display: block
+                height: calc-rem(20px)
+                margin-right: calc-rem(7px)
+                width: calc-rem(20px)
+
+            input
+              display: none
+
+              &:checked + label:before
+                background-image: url('../images/radio_selected.svg')
+
+      .fieldset-wrapper
+        .js-form-wrapper
+          margin-top: 0
+
+        .container-inline
+          margin-top: calc-rem(16px)
+
+    // Selects and options.
+    select,
+    option
+      background-color: $input-background-color
+      border: 1px solid $input-border-color
+      border-radius: 4px
+      color: $input-color
+      font-size: calc-rem($input-font-size)
+      font-weight: 500
+      line-height: normal
+      max-width: 100%
+      outline: none
+      padding: calc-rem(15px)
+      width: 100%
+
+      &:hover,
+      &:focus
+        border-color: $input-hover-border-color
+
+      &:focus
+        background-color: transparent
+
+      option
+        margin-bottom: calc-rem(16px)
+
+    // Inputs.
+    input
+      &.field-add-more-submit
+        margin-top: 1rem
+
+      &:placeholder
+        font-size: calc-rem($placeholder-font-size)
+        font-weight: 500
+        line-height: 1.3
+
+      &[type='search']
+        box-sizing: border-box
+
+      &[type='button'],
+      &[type='submit'],
+      &[type='reset']
+        white-space: normal
+
+      &[type='checkbox'],
+      &[type='radio']
+        cursor: pointer
+
+      &[type='password'],
+      &[type='search'],
+      &[type='email'],
+      &[type='text'],
+      &[type='tel'],
+      &[type='number'],
+      &[type='date'],
+      &[type='time']
+        background-color: $input-background-color
+        border: 1px solid $input-border-color
+        border-radius: 4px
+        color: $input-color
+        font-size: calc-rem($input-font-size)
+        font-weight: 500
+        max-width: 100%
+        outline: none
+        padding: calc-rem(15px)
+        width: 100%
+
+        &:hover,
+        &:focus
+          border-color: $input-hover-border-color
+
+        &:focus
+          background-color: $white
+
+      &[disabled='disabled']
+        cursor: not-allowed
+
+    input:-webkit-autofill
+      -webkit-box-shadow: 0 0 0 0 $white inset
+      font-size: calc-rem(16px) !important
+      transition: background-color 5000s ease-in-out 0s
+
+    // Js form elements.
+    .js-form
+      &-type-textfield,
+      &-type-entity-autocomplete,
+      &-type-select:not(.select-multiple),
+      &-type-email,
+      &-type-password,
+      &-type-number
+        position: relative
+
+        label
+          left: 1%
+          margin: 0
+          position: absolute
+          top: 50%
+          transition: .3s
+
+        .description,
+        .password-strength__title
+          color: $description-color
+          font-size: calc-rem(12px)
+          font-style: normal
+          font-weight: 500
+          line-height: 1
+
+        &.float-label
+          label
+            background-color: $white
+            font-size: calc-rem(12px)
+            font-weight: 600
+            left: 9px
+            line-height: 1
+            padding-left: .3rem
+            padding-right: .3rem
+            transform: none
+            transition: .3s
+
+        &.focus
+          label
+            color: $label-color-focus
+
+      &-type-textfield,
+      &-type-entity-autocomplete,
+      &-type-select,
+      &-type-number
+        label
+          transform: translateY(-50%)
+
+        &.float-label
+          label
+            top: -14%
+
+        &.form-item-name
+          label
+            transform: translateY(-90%)
+
+          &.float-label
+            label
+              top: -3%
+              transform: translateY(-50%)
+
+      &-type-select
+        &.select-multiple
+          position: relative
+
+          label
+            background-color: $white
+            font-size: calc-rem(12px)
+            font-weight: 600
+            left: 9px
+            line-height: 1
+            padding-left: .3rem
+            padding-right: .3rem
+            position: absolute
+            top: -1%
+
+      // Email.
+      &-type-email
+        label
+          transform: translateY(-80%)
+
+        &.float-label
+          label
+            top: -7%
+
+      // Textfield with another styles.
+      &-type-textfield
+        &.form-item-field-offer-suballotments-form-inline-entity-form-field-origin-0-value,
+        &.form-item-field-offer-suballotments-form-inline-entity-form-field-geolocation-0-value,
+        &.form-item-field-offer-suballotments-form-inline-entity-form-field-suballotment-status-0-value,
+        &.form-item-field-offer-suballotments-form-inline-entity-form-field-species-0-value,
+        &.form-item-field-start-location-0-value,
+        &.form-item-field-end-location-0-value,
+        &.form-item-field-geolocation-0-value,
+        &.form-item-field-portion-location-0-value
+
+          label
+            top: 44%
+            transform: translateY(-70%)
+
+          &.float-label
+            label
+              top: -7%
+              transform: translateY(-5%)
+
+      // Type number
+      &-type-number
+        &.form-item-field-offer-suballotments-form-inline-entity-form-field-wood-weight-0-value
+          .description
+            font-size: calc-rem(14px)
+            margin-left: .5rem
+            width: 50%
+
+      // Password.
+      &-type-password
+        overflow: visible
+
+        &.password-parent
+          label
+            top: 44%
+            transform: translateY(-90%)
+
+        &.float-label
+          label
+            top: -7%
+            transform: translateY(-5%)
+
+        &.confirm-parent,
+        &.form-item-current-pass
+          label
+            top: 26%
+
+          div
+            color: $description-color
+            font-size: calc-rem(12px)
+            font-style: normal
+            font-weight: 500
+            line-height: 1
+
+          &.float-label
+            label
+              top: -10%
+
+      // Checkbox.
+      &-type-checkbox
+        align-items: center
+        display: flex
+        margin: 0
+
+        input
+          height: calc-rem(15px)
+          opacity: 0
+          position: absolute
+          width: calc-rem(15px)
+          z-index: 9
+
+        .check
+          background-color: $checkbox-background-color
+          border: 1px solid $checkbox-color-border
+          border-radius: 2px
+          display: block
+          height: calc-rem(15px)
+          margin-right: calc-rem(8px)
+          width: calc-rem(15px)
+
+        input:checked ~ .check
+          background-color: $checkbox-color-selected
+          background-image: url('../images/check.png')
+          background-position: center
+          background-repeat: no-repeat
+          background-size: contain
+          border: 0
+
+        label
+          margin-bottom: 0
+
+      // File
+      &-type-managed-file
+        .image-widget-data
+          .form-file
+            font-family: $ralewway
+            font-size: calc-rem(16px)
+
+        .description
+          color: $description-color
+          font-size: calc-rem(12px)
+          font-style: normal
+
+    // Check all select.
+    .select-all
+      height: calc-rem(15px)
+      margin: 0
+      width: calc-rem(15px)
+
+      input[type='checkbox']
+        height: calc-rem(15px)
+        left: 0
+        opacity: 0
+        position: absolute
+        top: 0
+        transform: translate(90%, 90%)
+        width: calc-rem(15px)
+        z-index: 9
+
+      .check
+        background-color: $checkbox-background-color
+        border: 1px solid $checkbox-color-border
+        border-radius: 2px
+        display: block
+        height: calc-rem(15px)
+        width: calc-rem(15px)
+
+      input:checked ~ .check
+        background-color: $checkbox-color-selected
+        background-image: url('../images/delete-massive.png')
+        background-position: center
+        background-repeat: no-repeat
+        background-size: contain
+        border: 0
+
+  // Password suggestion
+  .password-suggestions
+    background-color: $status-info-bg
+    border-radius: 8px
+    box-shadow: 0 0 16px 0 rgba($black, .16)
+    max-width: 100%
+    padding: calc-rem(24px) calc-rem(21px)
+
+    &.description
+      color: $black
+      font-family: $ralewway
+      font-size: calc-rem(12px)
+      font-style: normal
+      line-height: 1.7
+
+  // Action wrapper
+  .form-actions
+    .form-submit
+      margin-left: calc-rem(16px)
+
+    #edit-views-bulk-operations-delete-entity
+      display: none
+
+  // Entity reference.
+  .field--type-entity-reference
+    &.field--name-field-portions
+
+      .wrapper-table
+        background-color: transparent
+        border-radius: 0
+        box-shadow: none
+        padding: 0
+
+    button
+      +button(ghost-black)
+
+  // Date.
+  .field--type-datetime
+    position: relative
+
+    h4
+      background-color: $white
+      color: $label-color
+      display: block
+      font-size: calc-rem(12px)
+      font-weight: 600
+      left: 9px
+      line-height: 1
+      padding-left: .3rem
+      padding-right: .3rem
+      position: absolute
+      text-transform: lowercase
+      top: -7px
+
+      &::first-letter
+        text-transform: uppercase
+
+    fieldset
+      .container-inline
+        margin-top: 0 !important
+
+  // Summary and data.
+  .field--type-text-with-summary,
+  .field--name-field-data
+    .form-textarea-wrapper
+      textarea
+        min-height: calc-rem(200px)
+
+    .filter-wrapper
+      padding: calc-rem(16px) calc-rem(8px)
+
+      .js-form-type-select
+        label
+          color: $label-color
+          font-size: calc-rem($label-font-size) !important
+          font-weight: 500 !important
+          position: relative
+
+        &.float-label
+          label
+            left: 0 !important
+            top: 0
+
+  // Options buttons.
+  .field--widget-options-buttons
+    max-width: calc-rem(416px)
+    width: 100%
+
+  // Datetime.
+  .field--type-datetime
+    margin: calc-rem(8px) 0
+
+    .fieldset-wrapper
+      div
+        align-items: center
+        display: flex
+        flex-flow: row wrap
+
+        .js-form-type-date
+          flex-basis: 0
+          flex-grow: 1
+
+          &:not(:last-child)
+            margin-right: calc-rem(16px)
+
+  // Upload document.
+  .field--name-field-file
+    label
+      +icomoon-text($ico-upload-doc, 24px, $secondary-color-dark)
+      margin-bottom: calc-rem(8px)
+
+    .js-form-managed-file
+      .file--text
+        background-image: none
+
+      .form-submit
+        margin-left: calc-rem(16px)
+
+  // Autorization.
+  .field--name-field-authorized
+    margin: calc-rem(16px) 0
+
+    .description
+      margin-left: .5rem
+
+  .field--type-string,
+  .field--type-entity-reference,
+  .field--type-decimal
+    overflow: auto
+
+  // Tracking route.
+  .field--name-field-tracking-route
+    .clearfix
+      display: flex
+      justify-content: flex-end
+
+  // Decimal.
+  .field--type-decimal
+    .js-form-type-number
+      align-items: center
+      display: flex
+
+  // Table within a form.
+  .wrapper-table
+    .views-field-views-bulk-operations-bulk-form
+      .form-item
+        margin: 0 !important
+
+        input
+          margin-right: 0
+
+form[class^='node'],
+.user-cancel-form
+  +background-container
+
+  .field--name-field-file
+    .file--mime-application-pdf
+      background-image: none

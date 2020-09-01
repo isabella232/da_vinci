@@ -1,1 +1,165 @@
 
+// Tables.
+$table-background-color: $white
+$table-box-shadow: rgba($black, .16)
+$table-tbody-tr-background-color: $white
+$table-tbody-tr-border-color: rgba(169, 152, 157, .5)
+$table-tbody-tr-color: $black
+$table-tbody-tr-hover-background-color: $light-grey
+$table-tbody-tr-selected-background-color: rgba($primary-color-light, .15)
+$table-th-color: $secondary-color-light
+$table-th-hover-color: $secondary-color-dark
+
+.wrapper-table
+  height: auto
+  overflow-x: auto
+  width: 100%
+
+table
+  border-collapse: collapse
+  border-spacing: 0 .1875rem
+  position: relative
+  width: 100%
+
+  th,
+  td
+    font-size: calc-rem(14px)
+    padding: 1rem
+
+    p,
+    ul
+      margin: 0
+      padding: 0
+
+  th
+    background-color: $table-background-color
+    color: $table-th-color
+    font-size: calc-rem(12px)
+    font-weight: 700
+    padding: .75rem 1rem
+    text-align: left
+    text-transform: uppercase
+    vertical-align: top
+
+  thead
+    th
+      border-bottom: 1px solid $table-tbody-tr-border-color
+      font-weight: 600
+
+      a
+        align-items: center
+        color: $table-th-color
+        display: flex
+        flex-flow: row nowrap
+        font-weight: 600
+        line-height: 1.14
+
+        &:hover
+          color: $table-th-hover-color
+
+        &::after
+          background-position: center
+          background-repeat: no-repeat
+          content: ''
+          display: block
+          height: calc-rem(24px)
+          width: calc-rem(24px)
+
+        .tablesort
+          display: none
+
+        &.sort-desc
+          &::after
+            background-image: url('../images/sort_desc.png')
+
+        &.sort-asc
+          &::after
+            background-image: url('../images/sort_asc.png')
+
+        // If has not class sort-desc or sort-asc
+        &:not(.sort-desc):not(.sort-asc)
+          &:hover
+            &::after
+              background-image: url('../images/sort.png')
+
+  tbody
+    tr
+      background-color: $table-tbody-tr-background-color
+      box-shadow: none
+      color: $table-tbody-tr-color
+      font-weight: 500
+      line-height: 1.14
+
+      &:not(:last-child)
+        border-bottom: 1px solid $table-tbody-tr-border-color
+
+      &:hover
+        background-color: $table-tbody-tr-hover-background-color
+        cursor: pointer
+
+      a
+        font-weight: 500
+
+      td
+        &.is-active
+          background-color: transparent
+
+        &.views-field-field-machine-data,
+        &.views-field-field-data,
+        &.views-field-field-associated-suballotments
+          max-width: calc-rem(700px)
+
+        &.views-field-field-suballotment-portions
+          max-width: calc-rem(350px)
+
+        &.views-field-views-conditional-field
+          a
+            &.edit
+              +icomoon($ico-edit, 18px, $black)
+              margin-left: calc-rem(32px)
+
+            &.delete
+              +icomoon($ico-trash, 18px, $black)
+              margin-left: calc-rem(8px)
+
+        &.views-field-field-file
+          .file--mime-application-pdf
+            background-image: none
+            display: block
+            padding-left: 0
+
+            a
+              @extend .hide-accessible
+              background-image: url('../images/pdf.svg')
+              background-position: center
+              background-repeat: no-repeat
+              background-size: contain
+              display: block
+              height: calc-rem(24px)
+              width: calc-rem(24px)
+
+      &.selected
+        background-color: $table-tbody-tr-selected-background-color
+
+        td
+          background: none
+
+  &.field-multiple-table
+    .form-item
+        margin: 0 !important
+
+    th
+      font-size: calc-rem(16px)
+      font-weight: 500
+      line-height: 1.3
+      text-transform: none
+
+      .label
+        color: rgba($secondary-color, .8)
+        font-size: calc-rem($label-font-size)
+        font-weight: 500
+        line-height: 1.3
+
+    td
+      padding-left: 0
+      padding-right: 0

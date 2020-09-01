@@ -1,1 +1,72 @@
 //.node
+@import 'profile/profile-compact'
+
+.node--view-mode-full
+  background-color: $white
+  border-radius: 8px
+  box-shadow: 0 0 16px 0 rgba($black, .16)
+  //padding: 2rem 0
+  padding: calc-rem(25px) calc-rem(32px)
+
+  > .node__content
+    // Fields.
+    > .field
+      padding: calc-rem(32px) calc-rem(16px)
+
+      &:not(:last-child)
+        border-bottom: 1px solid rgba($secondary-color-light, .5)
+
+      .field__label
+        align-items: center
+        color: rgba($secondary-color, .8)
+        display: flex
+        flex-flow: row wrap
+        font-size: calc-rem(16px)
+        font-weight: 500
+        line-height: 1.3
+        margin-bottom: calc-rem(21px)
+
+      .field__item
+        font-size: calc-rem(16px)
+        font-weight: 500
+        line-height: 1.3
+        padding-left: calc-rem(30px)
+
+        a,
+        time,
+        p
+          font-size: calc-rem(16px)
+          font-weight: 500
+          line-height: 1.3
+
+.node
+  .node
+    .node__content
+      .field
+        padding-top: 1rem
+        padding-bottom: 1rem
+
+        &:last-child()
+          padding-bottom: 0
+
+  &.node--view-mode-full
+    .layout
+      position: relative
+
+    .field--name-field-button-offer
+      align-items: center
+      display: flex
+      flex-flow: row wrap
+      padding: 0
+
+      +breakpoint($large)
+        padding: calc-rem(32px) calc-rem(16px)
+        position: absolute
+        right: 0
+        top: 0
+
+      > div
+        margin-bottom: calc-rem(16px)
+
+        &:not(:last-child)
+          margin-right: calc-rem(16px)

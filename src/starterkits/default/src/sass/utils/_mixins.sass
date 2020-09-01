@@ -44,37 +44,57 @@
 
 =button($button-style)
   border: 1px solid transparent
-  border-radius: 0
-  font-size: calc-rem(14px)
+  border-radius: calc-rem(24px)
+  font-size: calc-rem(12px)
   font-weight: bold
+  letter-spacing: .5px
+  line-height: 1
   margin: 0
-  padding: calc-rem(10px) calc-rem(24px)
+  padding: calc-rem(13px) calc-rem(44px)
+  text-transform: uppercase
   transition: .2s
-  +breakpoint($large)
-    font-size: calc-rem(15px)
 
   &:hover
     transition: .2s
 
   @if $button-style == 'primary'
-    background-color: $main-color
-    border-color: $main-color
+    background-color: $primary-color-light
+    border-color: $primary-color-light
+    color: $black
+
+    &:hover
+      background-color: $primary-color
+      border-color: $primary-color
+
+  @else if $button-style == 'secondary'
+    background-color: $black
+    border-color: $black
     color: $white
 
     &:hover
-      background-color: $secondary-color
-      border-color: $secondary-color
-      color: $white
+      background-color: $primary-color
+      border-color: $primary-color
+      color: $black
 
-  @else if $button-style == 'secondary'
-    background-color: transparent
-    border-color: $main-color
-    color: $main-color
+  @else if $button-style == 'ghost-white'
+    background-color: $black
+    border: 2px solid $white
+    color: $white
 
     &:hover
-      background-color: $main-color
-      border-color: $main-color
-      color: $white
+      background-color: $primary-color
+      border-color: $primary-color
+      color: $black
+
+  @else if $button-style == 'ghost-black'
+    background-color: transparent
+    border: 2px solid $black
+    color: $black
+
+    &:hover
+      background-color: $primary-color
+      border-color: $primary-color
+      color: $black
 
 /// Card.
 =card
@@ -87,6 +107,12 @@
   list-style-type: none
   margin: 0
   padding: 0
+
+=background-container
+  background-color: $white
+  border-radius: 8px
+  box-shadow: 0 0 16px 0 rgba($black, .16)
+  padding: calc-rem(25px) calc-rem(32px)
 
 /// Mixins for clear.
 =clearfix

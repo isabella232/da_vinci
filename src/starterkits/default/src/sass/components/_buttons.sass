@@ -1,0 +1,13 @@
+.button
+  +button(primary)
+
+  &--secondary
+    +button(secondary)
+
+  &:disabled
+    background-color: $light-grey
+    color: $secondary-color-light
+    pointer-events: none
+
+  &:focus
+    outline: none
