@@ -1,4 +1,4 @@
-INTRODUCTION TO STARTERKIT
+INTRODUCTION TO mytheme
 --------------------------
 
 You should never modify a theme that is packaged and released from Drupal.org 
@@ -10,7 +10,7 @@ Once you've donde that, you can override styles, templates...
 INSTRUCTIONS
 ------------
 
-1.- Copy the STARTERKIT from this directory into themes/custom directory.
+1.- Copy the default from this directory into themes/custom directory.
 
 2.- Rename the directory to a machine readable name you choose for your 
 subtheme (we're going to call THEMENAME for these explanations). You need to 

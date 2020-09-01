@@ -1,0 +1,6 @@
+services:
+  da_vinci.subtheme.command:
+    class: 'Drush\Commands\da_vinci\SubThemeCommands'
+    tags:
+      -
+        name: 'drush.command'

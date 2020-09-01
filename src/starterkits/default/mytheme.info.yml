@@ -1,6 +1,6 @@
-name: My Theme
+name: My theme
 type: theme
-description: Da Vinci custom subtheme.
+description: mytheme_description
 core: 8.x
 core_version_requirement: ^8 || ^9
 base theme: da_vinci

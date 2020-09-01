@@ -14,5 +14,17 @@
     "support": {
         "issues": "https://drupal.org/project/issues/da_vinci",
         "source": "https://cgit.drupalcode.org/da_vinci"
+    },
+    "autoload": {
+        "psr-4": {
+            "Drush\\Commands\\da_vinci\\": "Commands/da_vinci/"
+        }
+    },
+    "extra": {
+        "drush": {
+            "services": {
+                "drush.services.yml": "^9"
+            }
+        }
     }
 }
