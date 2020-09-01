@@ -20,7 +20,7 @@ depending on your interests:
   Attaching a library via a Twig template:
   You can attach an asset library to a Twig template using the attach_library() 
   function in any *.html.twig, file like so:
-  {{ attach_library('STARTERKIT/my-library') }}
+  {{ attach_library('mytheme/my-library') }}
 
   Attaching a library to all pages:
   To attach a library to all the pages that use your theme, declare it in your 
