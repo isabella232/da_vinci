@@ -4,7 +4,6 @@
 
 var autoprefixer = require('autoprefixer'),
   browserSync = require('browser-sync').create(),
-  converter = require('sass-convert'),
   color = require('colors'),
   del = require('del'),
   gulp = require('gulp'),
@@ -13,7 +12,6 @@ var autoprefixer = require('autoprefixer'),
   jsHintStylish = require('jshint-stylish'),
   postCss = require('gulp-postcss'),
   process = require('yargs').argv,
-  sassDoc = require('sassdoc'),
   sass = require('gulp-sass'),
   sassGlob = require('gulp-sass-glob'),
   sassLint = require('gulp-sass-lint'),
@@ -37,20 +35,6 @@ var distAssets = {
   styles: 'css/'
 };
 
-// Sass Doc
-var sassDocDist = 'sass_doc';
-
-var sassDocOptions = {
-  dest: sassDocDist,
-  verbose: true,
-  display: {
-    access: ['public', 'private'],
-    alias: true,
-    watermark: true
-  },
-  description: 'Sassdoc for mytheme theme',
-};
-
 /********** TASKS ***************/
 
 gulp.task('default', function () {
@@ -66,10 +50,6 @@ gulp.task('default', function () {
   console.log('gulp ' + 'mainStyles:pro'.cyan + '                      ' + '# Compile compressed css except "pages" directory, apply autoprefixer to result.'.grey);
   console.log('gulp ' + 'pagesStyles:pro'.cyan + '                      ' + '# Compile compressed css from "pages" directory exclusively, apply autoprefixer to result.'.grey);
   console.log('');
-  console.log('Utils tasks'.yellow);
-  console.log('gulp ' + 'clean:sassdoc'.cyan + '                       ' + '# Clean sassdoc directory.'.grey);
-  console.log('gulp ' + 'sassdoc'.cyan + '                             ' + '# Create a static internal page with a sass styleguide: variables, mixins, extends...'.grey);
-  console.log('');
   console.log('Debugging tasks'.yellow);
   console.log('gulp ' + 'sasslint'.cyan + '                            ' + '# Check sass files looking for a bad code practises .'.grey);
   console.log('gulp ' + 'jshint'.cyan + '                              ' + '# Check js files looking for a wrong syntaxis.'.grey);
@@ -82,7 +62,7 @@ gulp.task('default', function () {
   console.log('Developing task'.yellow);
   console.log('gulp ' + 'dev:watch'.cyan + '                          ' + '# Run a development task list: imagemin, mainStyles:dev, pagesStyles:dev and watch.'.grey);
   console.log('gulp ' + 'dev:browser'.cyan + '                        ' + '# Run a development task list: imagemin, mainStyles:dev, pagesStyles:dev and browserSync.'.grey);
-  console.log('gulp ' + 'pro'.cyan + '                                ' + '# Run a production task list: imagemin, mainStyles:pro, pagesStyles:pro, sassdoc.'.grey);
+  console.log('gulp ' + 'pro'.cyan + '                                ' + '# Run a production task list: imagemin, mainStyles:pro, pagesStyles:pro.'.grey);
   console.log('');
   console.log('Watching task example'.yellow);
   console.log('gulp ' + 'watch -h'.cyan + ' localhost'.green + '      ' + '# To configure hosts as mytheme.local.'.grey);
@@ -209,25 +189,6 @@ gulp.task('pagesStyles:pro', function () {
     .pipe(gulp.dest(distAssets.styles));
 });
 
-/************* SassDoc *****************/
-
-// Clean Sassdoc
-gulp.task('clean:sassdoc', function () {
-  return del([
-    sassDocDist
-  ]);
-});
-
-// Sassdoc
-gulp.task('sassdoc', ['clean:sassdoc'], function () {
-  return gulp.src(srcAssets.styles + '**/*.s+(a|c)ss')
-    .pipe(converter({
-      from: 'sass',
-      to: 'scss',
-    }))
-    .pipe(sassDoc(sassDocOptions));
-});
-
 /************* DEBUGGING *****************/
 
 // Sass lint
@@ -294,73 +255,6 @@ gulp.task('browsersync', function () {
     });
 });
 
-/************* QA - CODE QUALITY REPORTS *************/
-
-// JENKINS, jsHint report XML
-gulp.task('jenkinsJSHintReport', function () {
-  return gulp.src([distAssets.js + '*.js'])
-    .pipe(jsHint())
-    .pipe(jsHint.reporter('gulp-jshint-jenkins-reporter', {
-      filename: 'reports/jshint-checkstyle.xml',
-      level: 'e', // ewi [e:error;w=warning;i:info]
-      // sourceDir:  __dirname + '/', // full path to file
-      rulesFile: '.jshintrc'
-    }))
-    .pipe(browserSync.stream());
-});
-
-// JENKINS, sasslint report XML
-gulp.task('jenkinsSassLintReport', function () {
-  const fs = require('fs');
-  var file = fs.createWriteStream('reports/sasslint-checkstyle.xml');
-  return gulp.src('src/sass/**/*.sass')
-    .pipe(sassLint({
-      options: {
-        configFile: 'mytheme.sass-lint.yml',
-        formatter: 'checkstyle'
-      }
-    }))
-    .pipe(sassLint.format(file));
-  stream.on('finish', function () {
-    file.end();
-  });
-  return stream;
-});
-
-// DEVELOPER, sasslint report HTML
-gulp.task('sassLintReport', function () {
-  const fs = require('fs');
-  var file = fs.createWriteStream('reports/sassLintResult.html');
-  return gulp.src('src/sass/**/*.sass')
-    .pipe(sassLint({
-      options: {
-        configFile: 'mytheme.sass-lint.yml',
-        formatter: 'html'
-      }
-    }))
-    .pipe(sassLint.format(file));
-  stream.on('finish', function () {
-    file.end();
-  });
-  return stream;
-});
-
-// DEVELOPER, jsHint report HTML
-gulp.task('jsHintReport', function () {
-  return gulp.src([distAssets.js + '*.js'])
-    .pipe(jsHint({
-      options: {
-        configFile: '.jshintrc',
-        reporter: 'checkstyle'
-      }
-    }))
-    .pipe(jsHint.reporter('gulp-jshint-html-reporter', {
-      filename: 'reports/jshintResult.html',
-      createMissingFolders: false
-    }))
-    .pipe(browserSync.stream());
-});
-
 /************** TIME TO WORK ***********************/
 
 // Development enviroment
@@ -368,4 +262,4 @@ gulp.task('dev:watch', ['imagemin', 'mainStyles:dev', 'pagesStyles:dev', 'watch'
 gulp.task('dev:browsersync', ['imagemin', 'mainStyles:dev', 'pagesStyles:dev', 'browsersync']);
 
 // Production enviroment
-gulp.task('pro', ['imagemin', 'mainStyles:pro', 'pagesStyles:pro', 'sassdoc']);
+gulp.task('pro', ['imagemin', 'mainStyles:pro', 'pagesStyles:pro']);

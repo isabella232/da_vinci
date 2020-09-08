@@ -22,8 +22,6 @@ Like npm dependencies:
   (Using with Gulp).
   - Sass Globbing - Call your partials with /* or /** in your Main Sass.
   - SassLint & JsHint - Test your code!
-  - SassDoc - 'A documentation system to build pretty and powerful docs in
-  the blink of an eye'
   - Font-awesome-sass - Sass-powered version of FontAwesome
 
 
