@@ -17,18 +17,49 @@ use Drupal\node\Entity\Node;
  * Adds body classes if certain regions have content.
  */
 function da_vinci_preprocess_html(&$variables) {
-  $variables['html_attributes']['class'] = 'no-grid';
-  if (theme_get_setting('grid')) {
-    $variables['html_attributes']['class'] = 'grid';
-  }
-  if (theme_get_setting('border-region')) {
-    $variables['html_attributes']['class'] = 'border-region no-grid';
-  }
-  if (theme_get_setting('grid') && theme_get_setting('border-region')) {
-    $variables['html_attributes']['class'] = 'grid border-region';
-  }
   if (theme_get_setting('responsive-project')) {
     $variables['responsive'] = theme_get_setting('responsive-project');
+  }
+  if (theme_get_setting('styling')) {
+    $variables['styling_code'] = theme_get_setting('styling_code');
+  }
+  if (theme_get_setting('body-font')) {
+    $body_font = str_replace('+', ' ', theme_get_setting('body-font'));
+    $variables['fonts'] = theme_get_setting('body-font');
+    if (isset($variables['styling_code'])) {
+      $variables['styling_code'] .= '
+      body {
+        font-family: ' . $body_font . ';
+      }';
+    }
+    else {
+      $variables['styling_code'] = 'body {
+        font-family: ' . $body_font . ';
+      }';
+    }
+  }
+  if (theme_get_setting('header-font')) {
+    $header_font = str_replace('+', ' ', theme_get_setting('header-font'));
+    if (theme_get_setting('body-font')) {
+      $variables['fonts'] .= '|' . theme_get_setting('header-font');
+    }
+    else {
+      $variables['fonts'] = theme_get_setting('header-font');
+    }
+    if (isset($variables['styling_code'])) {
+      $variables['styling_code'] .= '
+      h1, h2, h3, h4, h5, h6 {
+        font-family: ' . $header_font . ';
+      }';
+    }
+    else {
+      $variables['styling_code'] = 'h1, h2, h3, h4, h5, h6 {
+        font-family: ' . $header_font . ';
+      }';
+    }
+  }
+  if (theme_get_setting('header-font')) {
+
   }
   if (!empty($variables['page']['featured_top'])) {
     $variables['attributes']['class'][] = 'has-featured-top';
@@ -264,6 +295,9 @@ function da_vinci_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       $form[$key]['submit']['#attributes'] = new Attribute();
     }
     $form[$key]['submit']['#attributes']->addClass('search-form__submit');
+    if (theme_get_setting('search-placeholder')) {
+      $form['keys']['#attributes']['placeholder'] = t('Search');
+    }
   }
 }
 
