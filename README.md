@@ -29,10 +29,10 @@ REQUIREMENTS
 ------------
 1.- Npm, which is installed with Node.js, which means that when you download
 Node.js, you automatically get npm installed on your computer.
-  To install Node.js v6:
+  To install Node.js v14:
     https://nodejs.org/es/download/
       or
-    curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+    curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
     sudo apt-get install -y nodejs
 
   Verify that Node.js and npm have been installed correctly:
@@ -44,6 +44,9 @@ Node.js, you automatically get npm installed on your computer.
 
   If they are ok, that commands will show us the versions, for example:
   v6.x.x           (when npm -v)
+  
+  Install package needed to install gifsicle library.
+    sudo apt-get install dh-autoreconf
 
 
 2.- Gulp, to automate tasks, like Sass compiling or browser reload.
@@ -77,13 +80,20 @@ USAGE
 1.- CREATING A SUBTHEME:
 You should never modify a theme that is packaged and released from Drupal.org
 because, if you do, all your changes will be lost once that theme is updated.
-Instead, you should create a subtheme from STARTERKIT folder. Once you've donde
-that, you can override styles, templates...
+Instead, you should create a subtheme. Once you've done that, you can override
+styles, templates...
 
-For this, copy the STARTERKIT directory into /themes/custom and rename with your
-desired name.
+Run drush --include="themes/contrib/da_vinci" da_vinci:subtheme 'My Theme'
 
-More info in STARTERKIT directory (README.txt file)
+Optional options:
+  - machine-name: The machine-readable name of your sub-theme. This will be
+    auto-generated from the human-readable name if omitted.
+  - description: The description of your sub-theme.
+  - destination: The destination of your sub-theme.
+  - starterkit: The name of the starter kit to use. By default it is default
+    folder.
+
+More info in src/starterkits directory (README.md file)
 
 
 2.- USING GULP:
@@ -101,6 +111,7 @@ and then save, Gulp will save your changes into main.css.
 If you're not using 'gulp watch', you should do 'gulp styles:dev' (in a
 development enviroment) after each change, then Gulp will compile once your
 changes.
+
 IMPORTANT: Remember don't edit the main.css files, because your changes will
 be removed when Gulp compiles.
 
@@ -111,7 +122,7 @@ For more info, check README in /src and /src/sass directory.
 Da Vinci is using Classy as base theme so an override is as simple as copying
 one of Classy's templates into your templates directory.
 
-More info in templates directory (README.txt file)
+More info in templates directory (README.md file)
 
 
 5.- PREPROCESS:
@@ -150,6 +161,8 @@ YML/PHP FILES
   responsive).
   - da_vinci.info.yml: The main file of our theme. We define name, version,
   base theme... Also we define our regions, and call to our css/js libraries.
+  - da_vinci.layouts.yml: Define layouts that can be used with the panels
+  module.
   - da_vinci.libraries.yml: To define our css and js libraries.
   - da_vinci.sass-lint.yml: Config for Sass Lint.
   - da_vinci.theme: See 'USAGE 5.- Preprocess' for more info.
@@ -169,4 +182,3 @@ MAINTAINERS
 -----------
 Current maintainers:
  * Nesta Guerrero (nguerrero) - https://www.drupal.org/u/nguerrero
- * María del Carmen Garcia (Karmen) - https://www.drupal.org/u/karmen
