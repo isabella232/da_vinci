@@ -1,4 +1,4 @@
-uuid: 46139b5d-92cd-4f02-957d-3cc35c1fb074
+uuid: db73457a-469a-4fd0-bf57-15765418499c
 langcode: en
 status: true
 dependencies:
@@ -11,14 +11,15 @@ dependencies:
 id: da_vinci_mobile_main_menu
 theme: da_vinci
 region: sliding_panel
-weight: -7
+weight: 0
 provider: null
 plugin: 'system_menu_block:main'
 settings:
   id: 'system_menu_block:main'
   label: 'Main navigation'
   provider: system
-  label_display: '0'
+  label_display: visible
   level: 1
   depth: 0
+  expand_all_items: false
 visibility: {  }

@@ -1,15 +1,15 @@
-uuid: 
+uuid:
 langcode: en
 status: true
 dependencies:
   theme:
     - mytheme
 _core:
-  default_config_hash: HQvbnO8M8kDcBNsYTpd9UJy0ZB74yAtuBf3SMzCujEs
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
 id: mytheme_local_tasks
 theme: mytheme
 region: content
-weight: -5
+weight: 1
 provider: null
 plugin: local_tasks_block
 settings:

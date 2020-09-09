@@ -1,4 +1,4 @@
-uuid: 
+uuid:
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
   theme:
     - mytheme
 _core:
-  default_config_hash: ssp3U8nm95FKwcIvco88LOTEPH7vIYrEDqHY6c-w3Lk
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
 id: mytheme_messages
 theme: mytheme
 region: highlighted

@@ -1,4 +1,4 @@
-uuid: 97f197e0-79e3-4474-b1fc-0914e22ab65f
+uuid: 57f3c5f3-2f8b-4932-a671-9e86f61e6ce4
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ dependencies:
 id: da_vinci_views_block__who_s_online_who_s_online_block
 theme: da_vinci
 region: sidebar_first
-weight: 0
+weight: 1
 provider: null
 plugin: 'views_block:who_s_online-who_s_online_block'
 settings:

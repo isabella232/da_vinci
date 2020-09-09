@@ -1,15 +1,15 @@
-uuid: 38f62c2d-57b3-4508-94fb-2f1492af1802
+uuid: 90549755-072d-4534-a657-e5718830b4ca
 langcode: en
 status: true
 dependencies:
   theme:
     - da_vinci
 _core:
-  default_config_hash: HQvbnO8M8kDcBNsYTpd9UJy0ZB74yAtuBf3SMzCujEs
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
 id: da_vinci_local_tasks
 theme: da_vinci
 region: content
-weight: -5
+weight: 1
 provider: null
 plugin: local_tasks_block
 settings:

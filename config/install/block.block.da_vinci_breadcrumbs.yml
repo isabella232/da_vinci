@@ -1,4 +1,4 @@
-uuid: c45ddb6f-1765-46d7-b0f0-09e457bacb8f
+uuid: aefe6cf1-98af-4a72-9470-5fea7f07e0b0
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,11 @@ dependencies:
   theme:
     - da_vinci
 _core:
-  default_config_hash: W_MQzBxQJ1Qxgq4qVEDDodOeqGkEbq9nCyjwJPGAzwU
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
 id: da_vinci_breadcrumbs
 theme: da_vinci
 region: breadcrumb
-weight: -7
+weight: 0
 provider: null
 plugin: system_breadcrumb_block
 settings:

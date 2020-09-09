@@ -58,9 +58,6 @@ function da_vinci_preprocess_html(&$variables) {
       }';
     }
   }
-  if (theme_get_setting('header-font')) {
-
-  }
   if (!empty($variables['page']['featured_top'])) {
     $variables['attributes']['class'][] = 'has-featured-top';
   }

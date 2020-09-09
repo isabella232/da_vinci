@@ -1,4 +1,4 @@
-uuid: 
+uuid:
 langcode: en
 status: true
 dependencies:
@@ -21,4 +21,5 @@ settings:
   label_display: visible
   level: 1
   depth: 0
+  expand_all_items: true
 visibility: {  }

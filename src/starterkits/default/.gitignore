@@ -2,6 +2,5 @@
 sass-libs
 node_modules
 maps/
-sass_doc
 *.map
 .DS_Store

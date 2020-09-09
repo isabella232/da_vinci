@@ -1,4 +1,4 @@
-uuid: a436b65b-bc7d-4368-b83d-692f53bc53e7
+uuid: 8a9e053b-59da-488e-b9f3-16a822ad9baa
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,11 @@ dependencies:
   theme:
     - da_vinci
 _core:
-  default_config_hash: RhSxk4BMoefkTbhN694aeHQJcU2w7_HXKbQdDNCPqTs
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
 id: da_vinci_branding
 theme: da_vinci
 region: header
-weight: -7
+weight: 0
 provider: null
 plugin: system_branding_block
 settings:

@@ -1,4 +1,4 @@
-uuid: 058ade75-c0a7-4aeb-95ca-4f5621a40ccb
+uuid: 0e2f6d4a-1494-49ef-8850-987b734834fd
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,11 @@ dependencies:
   theme:
     - da_vinci
 _core:
-  default_config_hash: ws_wACFj-XWP1qMNDk1-zwPh1LrGEY96P90KVM17S0c
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
 id: da_vinci_help
 theme: da_vinci
 region: content
-weight: -7
+weight: 2
 provider: null
 plugin: help_block
 settings:

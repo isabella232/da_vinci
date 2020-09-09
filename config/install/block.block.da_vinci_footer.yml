@@ -1,4 +1,4 @@
-uuid: 09a6942e-b15f-4aa6-b74d-e51a16d9924a
+uuid: 767b7cb3-ee8d-4fa1-af79-f70d9a3a1dbc
 langcode: en
 status: true
 dependencies:
@@ -9,11 +9,11 @@ dependencies:
   theme:
     - da_vinci
 _core:
-  default_config_hash: 1_pRWYAn2jB0frb286PE1Zj-2KjrTBg3w0PKFeGvEgA
+  default_config_hash: 8zRjTNbfNAJ94lQpZDu6MkyD87GYJ2zpH9VQPVmRbcM
 id: da_vinci_footer
 theme: da_vinci
 region: footer
-weight: -8
+weight: 0
 provider: null
 plugin: 'system_menu_block:footer'
 settings:
@@ -23,4 +23,5 @@ settings:
   label_display: '0'
   level: 1
   depth: 0
+  expand_all_items: true
 visibility: {  }
