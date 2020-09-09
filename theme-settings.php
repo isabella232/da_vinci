@@ -861,16 +861,13 @@ function da_vinci_form_system_theme_settings_alter(&$form, &$form_state) {
   ];
 
   $form['da_vinci_settings'] = [
-    '#type'       => 'vertical_tabs',
-    '#title'      => '<h3>' . t('Da Vinci Settings') . '</h3>',
+    '#type'        => 'vertical_tabs',
+    '#title'       => '<h3>' . t('Da Vinci Settings') . '</h3>',
     '#collapsible' => FALSE,
-    '#collapsed' => FALSE,
+    '#collapsed'   => FALSE,
   ];
 
-  /**
-   * Main Tabs.
-   */
-
+  // Main Tabs.
   // Main Tabs -> General.
   $form['general'] = [
     '#type'  => 'details',
@@ -885,9 +882,7 @@ function da_vinci_form_system_theme_settings_alter(&$form, &$form_state) {
     '#group' => 'da_vinci_settings',
   ];
 
-  /**
-   * Settings under General tab.
-   */
+  // Settings under General tab.
   $form['general']['body-font'] = [
     '#type'          => 'select',
     '#title'         => t('Body font'),
@@ -920,9 +915,7 @@ function da_vinci_form_system_theme_settings_alter(&$form, &$form_state) {
     '#description'   => t("Check me if you want Responsive Project."),
   ];
 
-  /**
-   * Settings under Custom Styling tab.
-   */
+  // Settings under Custom Styling tab.
   $form['css']['styling'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Enable custom css'),
