@@ -65,7 +65,7 @@ class SubThemeCommands extends DrushCommands implements BuilderAwareInterface {
    * @option string $description
    *   The description of your sub-theme
    * @option string $destination
-   *   The destination of your
+   *   The destination of your sub-theme
    * @option string $starterkit
    *   The name or url of the starter kit to use.
    *
