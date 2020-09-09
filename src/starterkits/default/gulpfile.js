@@ -69,7 +69,6 @@ gulp.task('default', function () {
   console.log('');
 });
 
-
 /************* CLEANING *****************/
 
 // Clean css
@@ -96,20 +95,21 @@ gulp.task('clean:images', function () {
 /************* COMPILING *****************/
 
 // Minify images
-gulp.task('imagemin', ['clean:images'], () =>
+gulp.task('imagemin', gulp.series(gulp.parallel('clean:images', () =>
   gulp.src(srcAssets.images + '*')
   .pipe(imagemin([
     imagemin.gifsicle({
       interlaced: true
     }),
-    imagemin.jpegtran({
-      progressive: true
+    imagemin.mozjpeg({
+      progressive: true,
     }),
     imagemin.optipng({
       optimizationLevel: 5
     }),
     imagemin.svgo({
-      plugins: [{
+      plugins: [
+        {
           removeViewBox: true
         },
         {
@@ -121,14 +121,14 @@ gulp.task('imagemin', ['clean:images'], () =>
     verbose: true
   }))
   .pipe(gulp.dest(distAssets.images))
-);
+)));
 
 // Main styles to development
 gulp.task('mainStyles:dev', function () {
   return gulp.src([
       '!' + srcAssets.styles + 'pages/**/*.s+(a|c)ss',
       srcAssets.styles + '**/*.s+(a|c)ss'
-    ])
+  ])
     .pipe(sourceMaps.init())
     .pipe(sassGlob())
     .pipe(sass({
@@ -159,7 +159,7 @@ gulp.task('mainStyles:pro', function () {
   return gulp.src([
       '!' + srcAssets.styles + 'pages/**/*.s+(a|c)ss',
       srcAssets.styles + '**/*.s+(a|c)ss'
-    ])
+  ])
     .pipe(sassGlob())
     .pipe(sass({
       errLogToConsole: true,
@@ -215,22 +215,23 @@ gulp.task('jshint', function () {
 
 // WATCH
 gulp.task('watch', function () {
-  gulp.watch(srcAssets.styles + '**/*.s+(a|c)ss', ['mainStyles:dev', 'pagesStyles:dev']).on('change', function (event) {
+  gulp.watch(srcAssets.styles + '**/*.s+(a|c)ss', gulp.series(gulp.parallel('mainStyles:dev', 'pagesStyles:dev')))
+    .on('change', function (path) {
     console.log('');
-    console.log('-> File ' + event.path.magenta.bold + ' was ' + event.type.green + ', running tasks css...');
+    console.log('-> File ' + path.magenta.bold + ' was ' + 'changed'.green + ', running tasks css...');
   });
 
-  gulp.watch(distAssets.js + '**/*.js', ['jshint'])
-    .on('change', function (event) {
-      console.log('');
-      console.log('-> File ' + event.path.yellow + ' was ' + event.type.green + ', running tasks js...');
-    });
+  gulp.watch(distAssets.js + '**/*.js', gulp.series('jshint'))
+    .on('change', function (path) {
+    console.log('');
+    console.log('-> File ' + path + ' was ' + 'changed'.green + ', running tasks js...');
+  });
 
-  gulp.watch(srcAssets.images + '**/*', ['imagemin'])
-    .on('change', function (event) {
-      console.log('');
-      console.log('-> File ' + event.path.yellow + ' was ' + event.type.green + ', running tasks images...');
-    });
+  gulp.watch(srcAssets.images + '**/*', gulp.series('imagemin'))
+    .on('change', function (path) {
+    console.log('');
+    console.log('-> File ' + path + ' was ' + 'changed'.green + ', running tasks images...');
+  });
 
 });
 
@@ -247,19 +248,19 @@ gulp.task('browsersync', function () {
     open: openPath,
     proxy: path
   });
-  gulp.watch(srcAssets.styles + '**/*.s+(a|c)ss', ['mainStyles:dev', 'pagesStyles:dev'])
-    .on('change', function (event) {
-      console.log('');
-      console.log('-> File ' + event.path.magenta.bold + ' was ' + event.type.green + ', running tasks...');
-      browserSync.reload();
-    });
+  gulp.watch(srcAssets.styles + '**/*.s+(a|c)ss', gulp.series(gulp.parallel('mainStyles:dev', 'pagesStyles:dev')))
+    .on('change', function (path) {
+    console.log('');
+    console.log('-> File ' + path.magenta.bold + ' was ' + 'changed'.green + ', running tasks...');
+    browserSync.reload();
+  });
 });
 
 /************** TIME TO WORK ***********************/
 
 // Development enviroment
-gulp.task('dev:watch', ['imagemin', 'mainStyles:dev', 'pagesStyles:dev', 'watch']);
-gulp.task('dev:browsersync', ['imagemin', 'mainStyles:dev', 'pagesStyles:dev', 'browsersync']);
+gulp.task('dev:watch', gulp.series(gulp.parallel('imagemin', 'mainStyles:dev', 'pagesStyles:dev', 'watch')));
+gulp.task('dev:browsersync', gulp.series(gulp.parallel('imagemin', 'mainStyles:dev', 'pagesStyles:dev', 'browsersync')));
 
 // Production enviroment
-gulp.task('pro', ['imagemin', 'mainStyles:pro', 'pagesStyles:pro']);
+gulp.task('pro', gulp.series(gulp.parallel('imagemin', 'mainStyles:pro', 'pagesStyles:pro')));
