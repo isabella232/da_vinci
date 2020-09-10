@@ -161,8 +161,8 @@ YML/PHP FILES
   responsive).
   - da_vinci.info.yml: The main file of our theme. We define name, version,
   base theme... Also we define our regions, and call to our css/js libraries.
-  - da_vinci.layouts.yml: Define layouts that can be used with the panels
-  module.
+  - da_vinci.layouts.yml: Define layouts that can be used with Panopoly, Panels
+  IPE, and Panelizer.
   - da_vinci.libraries.yml: To define our css and js libraries.
   - da_vinci.sass-lint.yml: Config for Sass Lint.
   - da_vinci.theme: See 'USAGE 5.- Preprocess' for more info.

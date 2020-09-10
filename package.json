@@ -30,5 +30,8 @@
     "normalize-libsass": "^1.0.3",
     "slick-carousel": "^1.8.1",
     "yargs": "^16.0.0"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1"
   }
 }
