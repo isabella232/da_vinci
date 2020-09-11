@@ -25,8 +25,8 @@ var path = 'localhost';
 // Paths
 
 var srcAssets = {
-  images: 'src/images/',
-  styles: 'src/sass/'
+  images: 'assets/images/',
+  styles: 'assets/sass/'
 };
 
 var distAssets = {
@@ -44,7 +44,7 @@ gulp.task('default', function () {
   console.log('gulp ' + 'clean:images'.cyan + '                        ' + '# Clean image files from images directory'.grey);
   console.log('');
   console.log('Compiling tasks'.yellow);
-  console.log('gulp ' + 'imagemin'.cyan + '                            ' + '# Minifiy your images in ./src/images into ./images'.grey);
+  console.log('gulp ' + 'imagemin'.cyan + '                            ' + '# Minifiy your images in ./assets/images into ./images'.grey);
   console.log('gulp ' + 'mainStyles:dev'.cyan + '                      ' + '# Compile expanded css except "pages" directory and create a maps file.'.grey);
   console.log('gulp ' + 'pageStyles:dev'.cyan + '                      ' + '# Compile expanded css from "pages" directory exclusively and create a maps file.'.grey);
   console.log('gulp ' + 'mainStyles:pro'.cyan + '                      ' + '# Compile compressed css except "pages" directory, apply autoprefixer to result.'.grey);
@@ -102,7 +102,7 @@ gulp.task('imagemin', gulp.series(gulp.parallel('clean:images', () =>
         interlaced: true
       }),
       imagemin.mozjpeg({
-        progressive: true,
+        progressive: true
       }),
       imagemin.optipng({
         optimizationLevel: 5
@@ -241,7 +241,7 @@ gulp.task('browsersync', function () {
   if (process.h) {
     path = process.h;
     openPath = 'external';
-    console.log(color.green(path) + ' configured as new hosts.'.yellow);
+    console.log(path.green + ' configured as new hosts.'.yellow);
   }
   browserSync.init({
     host: path,

@@ -18,4 +18,4 @@ buttons... and other elements you can be used anywhere on the website.
 
 Feel free to add your own sass files :)
 
-For more info, check main.sass (located in da_vinci/src/sass)
+For more info, check main.sass (located in da_vinci/assets/sass)

@@ -12,7 +12,6 @@ Da Vinci uses:
 
 And...
 Like bower dependencies:
-  - Normalize - Libsass version of normalize.css
   - Susy 2 - Grid Framework.
   - Breakpoint - Helper for grid, excelent.
   - Bourbon Refills - http://refills.bourbon.io/
@@ -22,8 +21,6 @@ Like npm dependencies:
   (Using with Gulp).
   - Sass Globbing - Call your partials with /* or /** in your Main Sass.
   - SassLint & JsHint - Test your code!
-  - Font-awesome-sass - Sass-powered version of FontAwesome
-
 
 REQUIREMENTS
 ------------
@@ -44,9 +41,6 @@ Node.js, you automatically get npm installed on your computer.
 
   If they are ok, that commands will show us the versions, for example:
   v6.x.x           (when npm -v)
-  
-  Install package needed to install gifsicle library.
-    sudo apt-get install dh-autoreconf
 
 
 2.- Gulp, to automate tasks, like Sass compiling or browser reload.
@@ -93,7 +87,7 @@ Optional options:
   - starterkit: The name of the starter kit to use. By default it is default
     folder.
 
-More info in src/starterkits directory (README.md file)
+More info in starterkits directory (README.md file)
 
 
 2.- USING GULP:
@@ -115,7 +109,7 @@ changes.
 IMPORTANT: Remember don't edit the main.css files, because your changes will
 be removed when Gulp compiles.
 
-For more info, check README in /src and /src/sass directory.
+For more info, check README in /src and /assets/sass directory.
 
 
 4.- OVERRIDING TEMPLATES:
@@ -161,8 +155,6 @@ YML/PHP FILES
   responsive).
   - da_vinci.info.yml: The main file of our theme. We define name, version,
   base theme... Also we define our regions, and call to our css/js libraries.
-  - da_vinci.layouts.yml: Define layouts that can be used with Panopoly, Panels
-  IPE, and Panelizer.
   - da_vinci.libraries.yml: To define our css and js libraries.
   - da_vinci.sass-lint.yml: Config for Sass Lint.
   - da_vinci.theme: See 'USAGE 5.- Preprocess' for more info.

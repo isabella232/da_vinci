@@ -1,4 +1,4 @@
-SRC
+ASSETS
 ---
 
 In this folder, we have our sass directory, inside it you can find more 

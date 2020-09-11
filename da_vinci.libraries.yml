@@ -19,6 +19,7 @@ global-js:
     - core/jquery
     - core/modernizr
     - core/drupal
+    - core/popperjs
 
 # User login.
 user-login:

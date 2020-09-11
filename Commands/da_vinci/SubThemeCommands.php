@@ -90,7 +90,7 @@ class SubThemeCommands extends DrushCommands implements BuilderAwareInterface {
 
     // @todo Use extension service.
     $davinciDir = drupal_get_path('theme', 'da_vinci');
-    $srcDir = "$davinciDir/src/starterkits/{$starterkit}";
+    $srcDir = "$davinciDir/starterkits/{$starterkit}";
     $dstDir = "{$options['destination']}/{$options['machine-name']}";
 
     $cb = $this->collectionBuilder();

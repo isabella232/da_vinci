@@ -7,5 +7,5 @@ changes even if they are in a new css file.
 
 main.css is intended to save changes resulting from the compilation of sass
 files through Gulp.
-If you create another .sass file in /src/sass, this file also will be compiled
+If you create another .sass file in /assets/sass, this file also will be compiled
 into this directory.
