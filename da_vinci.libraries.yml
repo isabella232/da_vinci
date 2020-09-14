@@ -38,3 +38,31 @@ user-password:
   css:
     theme:
       css/user-password.css: {}
+
+# Theme settings.
+theme-settings:
+  css:
+    component:
+      css/da_vinci.select2.css: {}
+  js:
+    js/da-vinci-settings.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery.once
+    - da_vinci/libraries.jquery.select2
+
+libraries.jquery.select2:
+  remote: https://select2.github.io/
+  version: '4.0.13'
+  license:
+    name: MIT
+    url: http://opensource.org/licenses/mit-license.php
+    gpl-compatible: true
+  directory: jquery.select2
+  css:
+    component:
+      https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css: { type: external, minified: true }
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js: { type: external, minified: true }
+  dependencies:
+    - core/jquery

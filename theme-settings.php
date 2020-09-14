@@ -890,6 +890,9 @@ function da_vinci_form_system_theme_settings_alter(&$form, &$form_state) {
     '#options'       => array_flip($google_fonts),
     '#default_value' => theme_get_setting('body-font', 'da_vinci'),
     '#description'   => t('Select font for the body. Use Default to disable.'),
+    '#attributes'    => [
+      'class'        => ['js-davinci-select2'],
+    ],
   ];
 
   $form['general']['header-font'] = [
@@ -899,6 +902,9 @@ function da_vinci_form_system_theme_settings_alter(&$form, &$form_state) {
     '#options'       => array_flip($google_fonts),
     '#default_value' => theme_get_setting('header-font', 'da_vinci'),
     '#description'   => t('Select font for headers. Use Default to disable.'),
+    '#attributes'    => [
+      'class'        => ['js-davinci-select2'],
+    ],
   ];
 
   $form['general']['search-placeholder'] = [
@@ -929,4 +935,6 @@ function da_vinci_form_system_theme_settings_alter(&$form, &$form_state) {
     '#default_value' => theme_get_setting('styling_code', 'da_vinci'),
     '#description'   => t('Please enter your custom css codes in this text box. You can use it to customize the appearance of your site.'),
   ];
+
+  $form['#attached']['library'][] = 'da_vinci/theme-settings';
 }
