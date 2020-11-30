@@ -1,34 +1,6 @@
-global-css:
-  css:
-    theme:
-      css/mytheme.css: {}
-
-global-js:
-  header: true
-  js:
-    js/mytheme.js: {}
-    js/inputs.js: {}
-    js/collapse-menu.js: {}
-    js/autocomplete-inputs-entity-reference.js: {}
-
-  dependencies:
-    - core/jquery.once
-
-color.preview:
-  version: VERSION
-  css:
-    theme:
-      color/preview.css: {}
-      css/colors.css: {}
-  js:
-    color/preview.js: {}
-  dependencies:
-    - color/drupal.color
-
 # Front path.
 front:
   js:
-    #js/vendors/slick.min.js: {}
     js/home.js: {}
   css:
     theme:

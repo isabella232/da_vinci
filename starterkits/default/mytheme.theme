@@ -9,9 +9,6 @@
  * Functions to support theming in DaVinci subtheme.
  */
 function mytheme_preprocess_html(&$variables) {
-  if (\Drupal::moduleHandler()->moduleExists('color')) {
-    $variables['html_attributes']['class'] = 'colors';
-  }
   $path = \Drupal::service('path.current')->getPath();
   $path_args = explode('/', $path);
   if (isset($path_args[1]) && isset($path_args[2]) && ($path_args[1] == 'node') && (is_numeric($path_args[2]))) {

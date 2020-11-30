@@ -6,17 +6,21 @@ global-css:
 global-js:
   header: true
   js:
+    js/da-vinci.js: {}
     js/vendors/jquery.unevent.js: {}
     js/vendors/jquery.viewport.js: {}
     js/vendors/css_browser_selector.js: {}
+    js/inputs.js: {}
+    js/collapse-menu.js: {}
+    js/autocomplete-inputs-entity-reference.js: {}
     js/utils/menu-svg.js: {}
     js/back-to-top.js: {}
-    js/da-vinci.js: {}
     js/custom.js: {}
     js/sliding-panel.js: {}
     js/svg.js: {}
   dependencies:
     - core/jquery
+    - core/jquery.once
     - core/modernizr
     - core/drupal
     - core/popperjs
@@ -47,8 +51,6 @@ theme-settings:
   js:
     js/da-vinci-settings.js: {}
   dependencies:
-    - core/drupal
-    - core/jquery.once
     - da_vinci/libraries.jquery.select2
 
 libraries.jquery.select2:
