@@ -73,12 +73,6 @@
     </div>
   </header>
 
-  {% if page.sliding_panel %}
-  <aside class="js-menu sliding-panel-content">
-    {{ page.sliding_panel }}
-  </aside>
-  {% endif %}
-
   {% if page.highlighted %}
     {{ page.highlighted }}
   {% endif %}
@@ -146,8 +140,6 @@
 
   </footer>
   {% endif %}
-
-  <div class="back-to-top"></div>
 
 {{ page.convert }}
 </div>{# /.layout-container #}
